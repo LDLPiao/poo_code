@@ -11,15 +11,19 @@ class Pessoa {
    * @brief Adiciona um novo cadastro de pessoa
    * @param Nome utilizado no cadastro.
    * @param Email  utilizado no cadastro.
-   * @param Certificado utilizado no cadastro.
    */
   Pessoa(const std::string& nome,
-        const std::string& email,
-        const int certificado,
-        const bool pessoa_juridica);//cpf = 0,cnpj = 1
+        const std::string& email);
+        
 
+  /**
+   * @brief inicializa o CPF do cadastrado.*/
+  void setCpf(const int &cadastro);
 
-  
+  /**
+   * @brief inicializa o CNPJ do cadastrado.*/
+  void setCNPJ(const int &cadastro);
+
   /**
    * @brief Retorna o nome do cadastrado.*/
   std::string getNome() const;
@@ -40,7 +44,7 @@ class Pessoa {
    * @return true Verdadeiro se passa em todas as condicoes
    * @return false Falso se nao passa em pelo menos uma das condicoes
    */
-  bool checkCertificado(const std::string& certificado) const;
+  bool verificaCertificado(const std::string& certificado, const bool pessoa_juridica) const;
 
  private:
   /**
