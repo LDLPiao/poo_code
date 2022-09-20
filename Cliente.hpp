@@ -1,11 +1,13 @@
-#ifndef CLIENTE
-#define CLIENTE
+#ifndef CLIENTE_H
+#define CLIENTE_H
 
-#include "produto.hpp"
+#include <iostream>
+#include <string.h>
+#include "Pessoa.hpp"
 
 /**
  * @brief Classe responsavel pelo armazenamento e gerenciamento das informacoes
- * de um pedido.
+ * de um cliente.
  */
 class Cliente : public Pessoa{
  private:
@@ -24,7 +26,11 @@ class Cliente : public Pessoa{
    * @brief Construtor da classe.
    */
 
-  Cliente();
+  Cliente(std::string nome,
+          std::string email,
+          const int certificado,
+          const int telefone,
+          bool tipo = 0);
   /**
    * @brief Destrutor da classe.
    */
