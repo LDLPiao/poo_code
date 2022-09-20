@@ -1,0 +1,56 @@
+#ifndef CLIENTE
+#define CLIENTE
+
+#include "produto.hpp"
+
+/**
+ * @brief Classe responsavel pelo armazenamento e gerenciamento das informacoes
+ * de um pedido.
+ */
+class Cliente : public Pessoa{
+ private:
+  /**
+   * @brief Booleando que mostra se o cliente é PJ ou PF
+   */
+  bool _tipo;
+
+  /**
+   * @brief Endereco de telefone do cliente
+   */
+  int _telefone;
+ public:
+
+  /**
+   * @brief Construtor da classe.
+   */
+
+  Cliente();
+  /**
+   * @brief Destrutor da classe.
+   */
+
+  ~Cliente();
+  /**
+   * @brief Atribui um valor à _tipo.
+   * True => Pessoa jurídica
+   * False => Pessoa Física
+   */
+  void setTipo(bool tipo);
+
+  /**
+   * @brief Retorna o valor contido em _tipo.
+   */
+  bool getTipo();
+
+  /**
+   * @brief Atribui um valor à _telefone.
+   */
+  void setTelefone(int telefone);
+
+  /**
+   * @brief Retorna o valor contido em _telefone.
+   */
+  int getTelefone();
+
+};
+#endif
