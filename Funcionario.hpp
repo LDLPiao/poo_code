@@ -1,15 +1,28 @@
-#ifndef USUARIO_H
-#define USUARIO_H
+#ifndef FUNCIONARIO_H
+#define FUNCIONARIO_H
 
-#include "Pessoa.h"
-#include "Data.h"
+#include "Pessoa.hpp"
+#include "Data.hpp"
 #include <string>
+#include <list>
 
 /**
  * @brief Classe que armazena e gerencia as informacoes do funcionário.
  *
  */
 class Funcionario: public Pessoa {
+
+ private:
+  /**
+   * @brief Data de nascimento
+   */
+  Data _nascimento;
+
+  /**
+   * @brief Endereço
+   */
+  string _endereco;
+
  public:
   /**
    * @brief Construtor padrao que inicializa todas as variaveis privadas da
@@ -18,48 +31,81 @@ class Funcionario: public Pessoa {
    * @param login Login do usuario
    * @param password Password do usuario
    */
-  Funcionario(std::string nome, std::string email, int cpf, Data nascimento, std::string endereco, int matricula): Pessoa(nome, email);
+  Funcionario(const std::string nome, const std::string email, const int cpf, const Data nascimento, const std::string endereco, const int matricula): Pessoa(nome, email);
 
   /**
-   * @brief Retorna o login do 
+   * @brief Retorna o Nascimento
    *
-   * @return std::string Login do usuario
+   * @return std::string Nascimento
    */
-  std::string get() const;
+  Data getNascimento() const;
+
 
   /**
-   * @brief Retorna o password do usuario
+   * @brief Retorna o Endereco
    *
-   * @return std::string Password do usuario
+   * @return std::string Endereco
    */
-  std::string getPassword() const;
+  std::string getEndereco() const;
+
 
   /**
-   * @brief Atualiza o login do usuario
+   * @brief Retorna o Matricula
    *
-   * @param login Novo login do usuario
+   * @return std::string Matricula
    */
-  void setLogin(const std::string& login);
+  int getMatricula() const;
+
 
   /**
-   * @brief Atualiza o password do usuario
+   * @brief Retorna o Registro de Salários
    *
-   * @param login Novo password do usuario
+   * @return std::string Registro de Salários
    */
-  void setPassword(const std::string& password);
-
- private:
-  /**
-   * @brief Login do usuario
-   *
-   */
-  // TODO: declare aqui o login do usuario
+  list<double> getRegistroSalario() const;
 
   /**
-   * @brief Password do usuario
+   * @brief Retorna o ultimo salario do registro, o atual.
    *
+   * @return std::double salário atual
    */
-  // TODO: declare aqui o password do usuario
+  double getSalarioatual() const;
+
+  /**
+   * @brief Atualiza o nascimento
+   *
+   * @param Novo nascimento
+   */
+  void setNascimento(const Data nascimento);
+
+  /**
+   * @brief Atualiza o endereço
+   *
+   * @param Novo endereço
+   */
+  void setEndereco(const std::string& endereco);
+
+  /**
+   * @brief Atualiza a matricula
+   *
+   * @param Nova matrícula
+   */
+  void setMatricula(const int matricula);
+
+  /**
+   * @brief Adiciona lista de salários, substituindo a anterior
+   *
+   * @param Nova lista de salários
+   */
+  void setRegistroSalario(const list<double> registro_salario);
+
+  /**
+   * @brief Adiciona novo salário
+   *
+   * @param Novo salário
+   */
+  void addSalario(const double salario);
+
 };
 
 #endif
