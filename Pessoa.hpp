@@ -2,7 +2,6 @@
 #define PESSOA_H
 
 
-#include <iostream>
 #include <string.h>
 
 class Pessoa {
