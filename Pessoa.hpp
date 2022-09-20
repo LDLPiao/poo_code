@@ -2,7 +2,8 @@
 #define PESSOA_H
 
 
-#include <string>
+#include <iostream>
+#include <string.h>
 
 class Pessoa {
  public:
@@ -17,11 +18,11 @@ class Pessoa {
 
   /**
    * @brief inicializa o CPF do cadastrado.*/
-  void setCpf(const int &cadastro);
+  void setCpf(const int &certificado);
 
   /**
    * @brief inicializa o CNPJ do cadastrado.*/
-  void setCNPJ(const int &cadastro);
+  void setCNPJ(const int &certificado);
 
   /**
    * @brief Retorna o nome do cadastrado.*/
