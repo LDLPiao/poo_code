@@ -2,7 +2,7 @@
 #define FUNCIONARIO_H
 
 #include "Pessoa.hpp"
-#include "Data.hpp"
+#include "Data.h"
 #include "Admissao.hpp"
 #include "Demissao.hpp"
 

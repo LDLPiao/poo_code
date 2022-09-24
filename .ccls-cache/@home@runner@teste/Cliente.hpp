@@ -31,6 +31,7 @@ class Cliente : public Pessoa{
           const int certificado,
           const int telefone,
           bool tipo = 0);
+
   /**
    * @brief Destrutor da classe.
    */
@@ -55,6 +56,7 @@ class Cliente : public Pessoa{
 
   /**
    * @brief Retorna o valor contido em _telefone.
+   * 
    */
   int getTelefone();
 
