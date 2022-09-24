@@ -1,65 +1,162 @@
-#ifndef USUARIO_H
-#define USUARIO_H
+#ifndef FUNCIONARIO_H
+#define FUNCIONARIO_H
 
-#include "Pessoa.h"
-#include "Data.h"
+#include "Pessoa.hpp"
+#include "Data.hpp"
+#include "Admissao.hpp"
+#include "Demissao.hpp"
+
 #include <string>
+#include <list>
 
 /**
  * @brief Classe que armazena e gerencia as informacoes do funcionário.
  *
  */
 class Funcionario: public Pessoa {
+
+ private:
+  /**
+   * @brief Data de nascimento do funcionário
+   */
+  Data _nascimento;
+
+  /**
+   * @brief Endereço do funcionário
+   */
+  string _endereco;
+
+  /**
+   * @brief Número de matrícula do funcionário
+   */
+  int _matricula;
+
+  /**
+   * @brief Registros com o histórico de salários do funcionário, o 
+   * primeiro da lista é o mais recente e atual.
+   */
+  list<double> _registro_salario;
+
+  /**
+   * @brief Registros com o histórico de salários do funcionário, o 
+   * primeiro da lista é o mais recente e atual.
+   */
+  list<Admissao> _admissoes;
+
+  /**
+   * @brief Registros com o histórico de salários do funcionário, o 
+   * primeiro da lista é o mais recente e atual.
+   */
+  list<Data> _demissoes;
+
  public:
   /**
    * @brief Construtor padrao que inicializa todas as variaveis privadas da
    * classe.
    *
-   * @param login Login do usuario
-   * @param password Password do usuario
+   * @param nome nome do funcionário
+   * @param email email do funcionário
+   * @param cpf cpf do funcionário
+   * @param nascimento data de nascimento do funcionário
+   * @param endereco endereço de moradia do funcionário
+   * @param matricula número de matrícula do funcionário
    */
-  Funcionario(Data nascimento, std::string endereco, int matricula): Pesoa(std::string nome, std::string email, int cpf);
+  Funcionario(const std::string nome, const std::string email, const int cpf, const Data nascimento, const std::string endereco, const int matricula): Pessoa(nome, email);
 
   /**
-   * @brief Retorna o login do 
+   * @brief Retorna a data de nascimento do funcionário
    *
-   * @return std::string Login do usuario
+   * @return std::string Nascimento
    */
-  std::string getLogin() const;
+  Data getNascimento() const;
+
 
   /**
-   * @brief Retorna o password do usuario
+   * @brief Retorna o endereço do funcionário
    *
-   * @return std::string Password do usuario
+   * @return std::string Endereco
    */
-  std::string getPassword() const;
+  std::string getEndereco() const;
+
 
   /**
-   * @brief Atualiza o login do usuario
+   * @brief Retorna a matrícula do funcionário
    *
-   * @param login Novo login do usuario
+   * @return std::string Matricula
    */
-  void setLogin(const std::string& login);
+  int getMatricula() const;
+
 
   /**
-   * @brief Atualiza o password do usuario
+   * @brief Retorna o registro de salários do funcionário
    *
-   * @param login Novo password do usuario
+   * @return std::string Registro de Salários
    */
-  void setPassword(const std::string& password);
-
- private:
-  /**
-   * @brief Login do usuario
-   *
-   */
-  // TODO: declare aqui o login do usuario
+  list<double> getRegistroSalario() const;
 
   /**
-   * @brief Password do usuario
+   * @brief Retorna o ultimo salario do registro, o atual,  do funcionário
+   *
+   * @return std::double salário atual
+   */
+  double getSalarioatual() const;
+
+  /**
+   * @brief Atualiza o nascimento do funcionário
+   *
+   * @param Novo nascimento
+   */
+  void setNascimento(const Data nascimento);
+
+  /**
+   * @brief Atualiza o endereço do funcionário
+   *
+   * @param Novo endereço
+   */
+  void setEndereco(const std::string& endereco);
+
+  /**
+   * @brief Atualiza a matricula do funcionário
+   *
+   * @param Nova matrícula
+   */
+  void setMatricula(const int matricula);
+
+  /**
+   * @brief Adiciona lista de salários, substituindo a anterior
+   *
+   * @param Nova lista de salários
+   */
+  void setRegistroSalario(const list<double> registro_salario);
+
+  /**
+   * @brief Adiciona novo salário do funcionário
+   *
+   * @param Novo salário
+   */
+  void addSalario(const double salario);
+
+  /**
+   * @brief Admite o funcionário
    *
    */
-  // TODO: declare aqui o password do usuario
+  void Admitir();
+
+  /**
+   * @brief Demite o funcionário
+   *
+   */
+  void Demitir(const double salario);
+
+  /**
+   * @brief Promove o funcionário
+   *
+   * @param salario novo salario do funcionário
+   * @param cargo novo cargo do funcionário
+   * @param departamento novo do funcionário
+   */
+  void Promover(const double salario);
+
 };
 
 #endif

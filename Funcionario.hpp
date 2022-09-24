@@ -41,13 +41,13 @@ class Funcionario: public Pessoa {
    * @brief Registros com o histórico de salários do funcionário, o 
    * primeiro da lista é o mais recente e atual.
    */
-  Admissao admissao;
+  list<Admissao> _admissoes;
 
   /**
    * @brief Registros com o histórico de salários do funcionário, o 
    * primeiro da lista é o mais recente e atual.
    */
-  Data Demissao;
+  list<Data> _demissoes;
 
  public:
   /**
