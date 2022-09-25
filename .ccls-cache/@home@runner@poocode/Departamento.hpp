@@ -1,13 +1,14 @@
 #ifndef DEPARTAMENTO_H
 #define DEPARTAMENTO_H
 
+#include "Funcionario.hpp"
 #include <iostream>
 #include <list>
 #include <string.h>
 
 class Departamento {
 private:
-  std::list<Funcionario*> funcionarios_;
+  std::list<*Funcionario> funcionarios_;
   std::string nome_;
 public:
  /**

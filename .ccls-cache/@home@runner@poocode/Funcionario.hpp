@@ -4,7 +4,8 @@
 #include "Pessoa.hpp"
 #include "Data.h"
 #include "Admissao.hpp"
-#include "Demissao.hpp"
+#include "Departamento.hpp"
+#include "Cargo.hpp"
 
 #include <string>
 #include <list>
@@ -32,22 +33,32 @@ class Funcionario: public Pessoa {
   int _matricula;
 
   /**
-   * @brief Registros com o histórico de salários do funcionário, o 
-   * primeiro da lista é o mais recente e atual.
+   * @brief Registros com o histórico de salários do funcionário,
+   * o primeiro da lista é o mais recente e atual.
    */
   list<double> _registro_salario;
 
   /**
-   * @brief Registros com o histórico de salários do funcionário, o 
+   * @brief Registros de admissoes do funcionario,
    * primeiro da lista é o mais recente e atual.
    */
   list<Admissao> _admissoes;
 
   /**
-   * @brief Registros com o histórico de salários do funcionário, o 
+   * @brief Registros de demissoes do funcionario,
    * primeiro da lista é o mais recente e atual.
    */
   list<Data> _demissoes;
+
+  /**
+   * @brief Ponteiro para o departamento do funcionario
+   */
+  Departamento* _departamento;
+
+  /**
+   * @brief Ponteiro para o cargo do funcionario
+   */
+  Cargo* _cargo;
 
  public:
   /**
@@ -61,96 +72,112 @@ class Funcionario: public Pessoa {
    * @param endereco endereço de moradia do funcionário
    * @param matricula número de matrícula do funcionário
    */
-  Funcionario(const std::string nome, const std::string email, const int cpf, const Data nascimento, const std::string endereco, const int matricula): Pessoa(nome, email);
+  Funcionario(const std::string nome, const std::string email, const int cpf, const Data nascimento, const std::string endereco, const int matricula);
 
   /**
    * @brief Retorna a data de nascimento do funcionário
-   *
-   * @return std::string Nascimento
    */
   Data getNascimento() const;
 
 
   /**
    * @brief Retorna o endereço do funcionário
-   *
-   * @return std::string Endereco
    */
   std::string getEndereco() const;
 
 
   /**
    * @brief Retorna a matrícula do funcionário
-   *
-   * @return std::string Matricula
    */
   int getMatricula() const;
 
 
   /**
    * @brief Retorna o registro de salários do funcionário
-   *
-   * @return std::string Registro de Salários
    */
   list<double> getRegistroSalario() const;
 
   /**
-   * @brief Retorna o ultimo salario do registro, o atual,  do funcionário
-   *
-   * @return std::double salário atual
+   * @brief Retorna as admissões do funcionário
+   */
+  list<Admissao> getAdmissoes() const;
+
+  /**
+   * @brief Retorna as demissões do funcionário
+   */
+  list<Data> getDemissoes() const;
+
+  /**
+   * @brief Retorna o ultimo salario do registro, o atual,  do 
+   * funcionário
    */
   double getSalarioatual() const;
 
   /**
+   * @brief Retorna o cargo do funcionário
+   */
+  Cargo* getCargo() const;
+
+  /**
+   * @brief Retorna o departamento do funcionário
+   */
+  Departamento* getDepartamento() const;
+
+  /**
    * @brief Atualiza o nascimento do funcionário
-   *
    * @param Novo nascimento
    */
   void setNascimento(const Data nascimento);
 
   /**
    * @brief Atualiza o endereço do funcionário
-   *
    * @param Novo endereço
    */
-  void setEndereco(const std::string& endereco);
+  void setEndereco(const std::string endereco);
 
   /**
    * @brief Atualiza a matricula do funcionário
-   *
    * @param Nova matrícula
    */
   void setMatricula(const int matricula);
 
   /**
    * @brief Adiciona lista de salários, substituindo a anterior
-   *
    * @param Nova lista de salários
    */
   void setRegistroSalario(const list<double> registro_salario);
 
   /**
+   * @brief Atualiza o cargo do funcionário
+   * @param Novo cargo
+   */
+  void setCargo(Cargo &cargo);
+
+  /**
+   * @brief Atualiza o departamento do funcionário
+   * @param Novo departamento
+   */
+  void setDepartamento(Departamento &departamento);
+
+
+  /**
    * @brief Adiciona novo salário do funcionário
-   *
    * @param Novo salário
    */
   void addSalario(const double salario);
 
   /**
    * @brief Admite o funcionário
-   *
    */
-  void Admitir();
+  void Admitir(const double salario);
 
   /**
    * @brief Demite o funcionário
-   *
    */
-  void Demitir(const double salario);
+  void Demitir();
 
   /**
    * @brief Promove o funcionário
-   *
    * @param salario novo salario do funcionário
    * @param cargo novo cargo do funcionário
    * @param departamento novo do funcionário

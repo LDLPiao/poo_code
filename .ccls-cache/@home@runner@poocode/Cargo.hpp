@@ -1,6 +1,7 @@
 #ifndef CARGO_H
 #define CARGO_H
 
+#include "Funcionario.hpp"
 #include <iostream>
 #include <list>
 #include <string.h>
