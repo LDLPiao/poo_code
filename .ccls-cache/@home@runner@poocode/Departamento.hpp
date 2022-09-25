@@ -8,7 +8,7 @@
 
 class Departamento {
 private:
-  std::list<*Funcionario> funcionarios_;
+  std::list<Funcionario*> funcionarios_;
   std::string nome_;
 public:
  /**
@@ -23,14 +23,14 @@ public:
    *
    * @param a ponteiro para o funcionário desejado
    */
-  void addFuncionario(*Funcionario a);
+  void addFuncionario(Funcionario* a);
 
   /**
    * @brief Remove um funcionário da lista de funcionarios do departamento, mas primeiro confere se o funcionário está na lista
    *
    * @param a ponteiro para o funcionário desejado
    */
-  void removeFuncionario(*Funcionario a);
+  void removeFuncionario(Funcionario* a);
 };
 
 #endif

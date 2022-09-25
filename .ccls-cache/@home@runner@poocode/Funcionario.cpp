@@ -6,7 +6,10 @@ Funcionario::Funcionario(const std::string nome, const std::string email,
                          const int cpf, const Data nascimento,
                          const std::string endereco, const int matricula)
     : Pessoa(nome, email) {
-      
+      setCpf();
+      setNascimento(nascimento);
+      setEndereco(endereco);
+      setMatricula(matricula);
     }
 
 Data Funcionario::getNascimento() const{
