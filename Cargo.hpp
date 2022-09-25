@@ -1,14 +1,13 @@
 #ifndef CARGO_H
 #define CARGO_H
 
-#include "Funcionario.hpp"
 #include <iostream>
 #include <list>
 #include <string.h>
 
 class Cargo {
 private:
-  std::list<Funcionario*> cargos_;
+  std::list<int> matriculas_;
   std::string nome_;
 public:
  /**
@@ -19,18 +18,18 @@ public:
   Cargo(std::string nome);
 
   /**
-   * @brief Adiciona um funcionário para a lista de funcionários no cargo
+   * @brief Adiciona a matrícula de um funcionário pra lista de matrículas do cargo
    *
-   * @param a ponteiro para o funcionário desejado
+   * @param a numero de matricula
    */
-  void addFuncionario(Funcionario* a);
+  void addFuncionario(int a);
 
   /**
-   * @brief Remove um funcionário da lista de funcionarios do cargo, mas primeiro confere se o funcionário está na lista
+   * @brief Remove a matricula de um funcionário da lista de matriculas, mas primeiro confere se a matrícula está na lista
    *
-   * @param a ponteiro para o funcionário desejado
+   * @param a numero de matricula
    */
-  void removeFuncionario(Funcionario* a);
+  void removeFuncionario(int a);
 };
 
 #endif

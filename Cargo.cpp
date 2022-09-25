@@ -8,12 +8,12 @@ Cargo::Cargo(std::string nome){
   nome_ = nome;
 }
 
-void Cargo::addFuncionario(Funcionario* a){
-  cargos_.push_back(a);
+void Cargo::addFuncionario(int a){
+  matriculas_.push_back(a);
 }
 
-void Cargo::removeFuncionario(Funcionario* a){
-  for(auto it = cargos_.begin(); it != cargos_.end(); ++it){
-    if (*it == a){ cargos_.erase(it++);}
+void Cargo::removeFuncionario(int a){
+  for(auto it = matriculas_.begin(); it != matriculas_.end(); ++it){
+    if (*it == a){ matriculas_.erase(it++);}
   }
 }
