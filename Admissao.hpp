@@ -7,7 +7,7 @@
  * @brief Classe responsavel pelo armazenamento e gerenciamento das informacoes
  * de um cliente.
  */
-class Cliente : public Pessoa{
+class Admissao{
  private:
   /**
    * @brief Booleando que mostra se o cliente é PJ ou PF
@@ -24,7 +24,7 @@ class Cliente : public Pessoa{
    * @brief Construtor da classe.
    */
 
-  Cliente(Data data, double salario);
+  Admissao(Data data, double salario);
 
   /**
    * @brief Atribui um valor à _data.

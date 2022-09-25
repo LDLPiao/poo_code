@@ -37,6 +37,14 @@ double Funcionario::getSalarioatual() const{
   return _registro_salario.back();
 }
 
+Cargo* Funcionario::getCargo() const{
+  return _cargo;
+}
+
+Departamento* Funcionario::getDepartamento() const{
+  return _departamento;
+}
+
 void Funcionario::setNascimento(const Data nascimento){
   _nascimento = nascimento;
 }
@@ -53,22 +61,33 @@ void Funcionario::setRegistroSalario(const list<double> registro_salario){
   _registro_salario = registro_salario;
 }
 
-void Funcionario::setAdmissoes(const list<Admissao> admissoes){
-  _admissoes = admissoes;
+void Funcionario::setCargo(const Cargo &cargo){
+  _cargo = &cargo;
 }
 
-void Funcionario::setDemissoes(const list<Data> demissoes){
-  _demissoes = demissoes;
+void Funcionario::setDepartamento(const Departamento &departamento){
+  _departamento = &departamento;
 }
 
 void Funcionario::addSalario(const double salario){
   _registro_salario.push_back(salario);
 }
 
-void Funcionario::Admitir(const double salario){
-  
+void Funcionario::Admitir(const double salario, Cargo &cargo, Departamento &departamento){
+  Data aux;
+  getAdmissoes().push_back({aux.dateNow(), salario});
+  setCargo(cargo);
+  setDepartamento(departamento);
 }
 
-void Funcionario::Demitir();
+void Funcionario::Demitir(){
+  Data aux;
+  getDemissoes().push_back(aux.dateNow());
+  addSalario(0);
+  setCargo(nullptr);
+  setDepartamento(nullptr;
+}
 
-void Funcionario::Promover(const double salario);
+void Funcionario::Promover(const double salario, Cargo &cargo, Departamento &departamento){
+  addSalario(salario)
+}
