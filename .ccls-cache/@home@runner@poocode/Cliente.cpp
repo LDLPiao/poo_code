@@ -13,4 +13,10 @@ Cliente::Cliente(std::string nome,
     else setCpf(certificado);
 }
 
+void Cliente::setTipo(bool tipo):_tipo(tipo);
 
+bool Cliente::getTipo(){return _tipo}
+
+void Cliente::setTelefone(int telefone):_telefone(telefone);
+
+int Cliente::getTelefone(){return _telefone}

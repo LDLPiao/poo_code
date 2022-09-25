@@ -40,18 +40,18 @@ class Pessoa {
   /**
    * @brief Verifica se o CNPJ e o CPF passa em todas as restricoes
    *
-   * @param certificado_ que sera verificado
+   * @param certificado que sera verificado
    * @return true Verdadeiro se passa em todas as condicoes
    * @return false Falso se nao passa em pelo menos uma das condicoes
    */
-  bool verificaCertificado(const std::string& certificado, const bool pessoa_juridica) const;
+  bool verificaCertificado(int certificado, const bool pessoa_juridica);
 
  private:
   /**
    * @brief Container que armazena o nome, email e certificado da pessoa(CPF ou CNPJ)
    */
-  std::string nome_;
-  std::string email_;
-  int certificado_;
+  std::string _nome;
+  std::string _email;
+  int _certificado;
 };
 #endif

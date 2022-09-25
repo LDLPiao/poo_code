@@ -26,11 +26,12 @@ class Cliente : public Pessoa{
    * @brief Construtor da classe.
    */
 
-  Cliente(cosnt std::string& nome,
-          const std::string& email,
+  Cliente(std::string nome,
+          std::string email,
           const int certificado,
           const int telefone,
           bool tipo = 0);
+
   /**
    * @brief Destrutor da classe.
    */
@@ -55,6 +56,7 @@ class Cliente : public Pessoa{
 
   /**
    * @brief Retorna o valor contido em _telefone.
+   * 
    */
   int getTelefone();
 
