@@ -4,11 +4,12 @@
 #include "Pessoa.hpp"
 #include "Data.h"
 #include "Admissao.hpp"
-#include "Departamento.hpp"
-#include "Cargo.hpp"
 
 #include <string>
 #include <list>
+
+class Cargo;
+class Departamento;
 
 /**
  * @brief Classe que armazena e gerencia as informacoes do funcionário.
@@ -169,7 +170,7 @@ class Funcionario: public Pessoa {
   /**
    * @brief Admite o funcionário
    */
-  void Admitir(const double salario);
+  void Admitir(const double salario, Cargo &cargo, Departamento &departamento);
 
   /**
    * @brief Demite o funcionário
@@ -182,7 +183,7 @@ class Funcionario: public Pessoa {
    * @param cargo novo cargo do funcionário
    * @param departamento novo do funcionário
    */
-  void Promover(const double salario);
+  void Promover(const double salario, Cargo &cargo, Departamento &departamento);
 
 };
 

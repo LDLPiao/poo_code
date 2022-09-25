@@ -169,7 +169,7 @@ class Funcionario: public Pessoa {
   /**
    * @brief Admite o funcionário
    */
-  void Admitir(const double salario);
+  void Admitir(const double salario, Cargo &cargo, Departamento &departamento);
 
   /**
    * @brief Demite o funcionário
@@ -182,7 +182,7 @@ class Funcionario: public Pessoa {
    * @param cargo novo cargo do funcionário
    * @param departamento novo do funcionário
    */
-  void Promover(const double salario);
+  void Promover(const double salario, Cargo &cargo, Departamento &departamento);
 
 };
 
