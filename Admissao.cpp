@@ -18,5 +18,5 @@ void Admissao::setSalario(double salario) {
 }
 
 double Admissao::getSalario() {
-  return _salario
+  return _salario;
 }

@@ -98,7 +98,18 @@ class Funcionario: public Pessoa {
   list<double> getRegistroSalario() const;
 
   /**
-   * @brief Retorna o ultimo salario do registro, o atual,  do funcionário
+   * @brief Retorna as admissões do funcionário
+   */
+  list<Admissao> getAdmissoes() const;
+
+  /**
+   * @brief Retorna as demissões do funcionário
+   */
+  list<Data> getDemissoes() const;
+
+  /**
+   * @brief Retorna o ultimo salario do registro, o atual,  do 
+   * funcionário
    */
   double getSalarioatual() const;
 
@@ -122,7 +133,7 @@ class Funcionario: public Pessoa {
    * @brief Atualiza o endereço do funcionário
    * @param Novo endereço
    */
-  void setEndereco(const std::string& endereco);
+  void setEndereco(const std::string endereco);
 
   /**
    * @brief Atualiza a matricula do funcionário
@@ -140,13 +151,13 @@ class Funcionario: public Pessoa {
    * @brief Atualiza o cargo do funcionário
    * @param Novo cargo
    */
-  void setCargo(const Cargo &cargo);
+  void setCargo(Cargo &cargo);
 
   /**
    * @brief Atualiza o departamento do funcionário
    * @param Novo departamento
    */
-  void setDepartamento(const Departamento &departamento);
+  void setDepartamento(Departamento &departamento);
 
 
   /**

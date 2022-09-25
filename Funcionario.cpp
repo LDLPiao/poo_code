@@ -61,11 +61,11 @@ void Funcionario::setRegistroSalario(const list<double> registro_salario){
   _registro_salario = registro_salario;
 }
 
-void Funcionario::setCargo(const Cargo &cargo){
+void Funcionario::setCargo(Cargo &cargo){
   _cargo = &cargo;
 }
 
-void Funcionario::setDepartamento(const Departamento &departamento){
+void Funcionario::setDepartamento(Departamento &departamento){
   _departamento = &departamento;
 }
 
@@ -84,8 +84,8 @@ void Funcionario::Demitir(){
   Data aux;
   getDemissoes().push_back(aux.dateNow());
   addSalario(0);
-  setCargo(nullptr);
-  setDepartamento(nullptr);
+  _cargo = nullptr;
+  _departamento = nullptr;
 }
 
 void Funcionario::Promover(const double salario, Cargo &cargo, Departamento &departamento){
