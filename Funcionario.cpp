@@ -1,95 +1,65 @@
-#include "Funcionario.hpp"
+#ifndef USUARIO_H
+#define USUARIO_H
 
-#include <iostream>
+#include "Pessoa.h"
+#include "Data.h"
+#include <string>
 
-Funcionario::Funcionario(const std::string nome, const std::string email,
-                         const int cpf, const Data nascimento,
-                         const std::string endereco, const int matricula)
-    : Pessoa(nome, email) {
-      
-    }
+/**
+ * @brief Classe que armazena e gerencia as informacoes do funcionário.
+ *
+ */
+class Funcionario: public Pessoa {
+ public:
+  /**
+   * @brief Construtor padrao que inicializa todas as variaveis privadas da
+   * classe.
+   *
+   * @param login Login do usuario
+   * @param password Password do usuario
+   */
+  Funcionario(std::string nome, std::string email, int cpf, Data nascimento, std::string endereco, int matricula): Pessoa(nome, email);
 
-Data Funcionario::getNascimento() const{
-  return _nascimento;
-}
+  /**
+   * @brief Retorna o login do 
+   *
+   * @return std::string Login do usuario
+   */
+  std::string get() const;
 
-std::string Funcionario::getEndereco() const{
-  return _endereco;
-}
+  /**
+   * @brief Retorna o password do usuario
+   *
+   * @return std::string Password do usuario
+   */
+  std::string getPassword() const;
 
-int Funcionario::getMatricula() const{
-  return _matricula;
-}
+  /**
+   * @brief Atualiza o login do usuario
+   *
+   * @param login Novo login do usuario
+   */
+  void setLogin(const std::string& login);
 
-list<double> Funcionario::getRegistroSalario() const{
-  return _registro_salario;
-}
+  /**
+   * @brief Atualiza o password do usuario
+   *
+   * @param login Novo password do usuario
+   */
+  void setPassword(const std::string& password);
 
-list<Admissao> Funcionario::getAdmissoes() const{
-  return _admissoes;
-}
+ private:
+  /**
+   * @brief Login do usuario
+   *
+   */
+  // TODO: declare aqui o login do usuario
 
-list<Data> Funcionario::getDemissoes() const{
-  return _demissoes;
-}
+  /**
+   * @brief Password do usuario
+   *
+   */
+  // TODO: declare aqui o password do usuario
+};
 
-double Funcionario::getSalarioatual() const{
-  return _registro_salario.back();
-}
-
-Cargo* Funcionario::getCargo() const{
-  return _cargo;
-}
-
-Departamento* Funcionario::getDepartamento() const{
-  return _departamento;
-}
-
-void Funcionario::setNascimento(const Data nascimento){
-  _nascimento = nascimento;
-}
-
-void Funcionario::setEndereco(const std::string endereco){
-  _endereco = endereco;
-}
-
-void Funcionario::setMatricula(const int matricula){
-  _matricula = matricula;
-}
-
-void Funcionario::setRegistroSalario(const list<double> registro_salario){
-  _registro_salario = registro_salario;
-}
-
-void Funcionario::setCargo(Cargo &cargo){
-  _cargo = &cargo;
-}
-
-void Funcionario::setDepartamento(Departamento &departamento){
-  _departamento = &departamento;
-}
-
-void Funcionario::addSalario(const double salario){
-  _registro_salario.push_back(salario);
-}
-
-void Funcionario::Admitir(const double salario, Cargo &cargo, Departamento &departamento){
-  Data aux;
-  getAdmissoes().push_back({aux.dateNow(), salario});
-  setCargo(cargo);
-  setDepartamento(departamento);
-}
-
-void Funcionario::Demitir(){
-  Data aux;
-  getDemissoes().push_back(aux.dateNow());
-  addSalario(0);
-  _cargo = nullptr;
-  _departamento = nullptr;
-}
-
-void Funcionario::Promover(const double salario, Cargo &cargo, Departamento &departamento){
-  addSalario(salario);
-  setCargo(cargo);
-  setDepartamento(departamento);
-}
+#endif
