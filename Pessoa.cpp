@@ -1,60 +1,57 @@
-#include "Pessoa.hpp"
+#ifndef PESSOA_H
+#define PESSOA_H
 
 
+#include <iostream>
+#include <string.h>
 
-Pessoa::Pessoa(const std::string& nome,
-  const std::string& email){
+class Pessoa {
+ public:
+  /**
+   * @brief Adiciona um novo cadastro de pessoa
+   * @param Nome utilizado no cadastro.
+   * @param Email  utilizado no cadastro.
+   */
+  Pessoa(const std::string& nome,
+        const std::string& email);
+        
 
-  this->_nome = nome;
-  this->_email = email;
-      
-}
+  /**
+   * @brief inicializa o CPF do cadastrado.*/
+  void setCpf(const long int &certificado);
 
-void Pessoa::setCpf(const int &certificado){
-  if(verificaCertificado(certificado, 0) == 1)
-  this->_certificado = certificado;
-  else
-  std::cout << "CPF invalido" << std::endl;
-}
+  /**
+   * @brief inicializa o CNPJ do cadastrado.*/
+  void setCNPJ(const long int &certificado);
 
-void Pessoa::setCNPJ(const int &certificado){
-  if(verificaCertificado(certificado, 1) == 1)
-  this->_certificado = certificado;
-  else
-  std::cout << "CNPJ invalido" << std::endl;
-}
-
-std::string Pessoa::getNome() const{
-  return this->_nome;
-}
-std::string Pessoa::getEmail() const{
-  return this->_email;
-}
-int Pessoa::getCertificado() const{
-  return this->_certificado;
-}
-
-bool verificaCertificado(long int certificado, const bool pessoa_juridica){
+  /**
+   * @brief Retorna o nome do cadastrado.*/
+  std::string getNome() const;
   
+  /**
+   * @brief Retorna o email do cadastrado.*/
+  std::string getEmail() const;
 
-    if (certificado == 0)
-        return 0;
-    
-  int count = 0;
-    while (certificado != 0) {
-        certificado = certificado / 10;
-        ++count;
-    }
-    
-  
-  if(pessoa_juridica == 0 && count == 11){
-    return 1;
-    }
-  else if(pessoa_juridica == 1 && count == 14){
-    return 1;
-    }
-  else {
-    return 0;
-    }
-    
-} 
+  /**
+   * @brief Retorna o certificado do cadastrado.*/
+  long int getCertificado() const;
+
+ private:
+  /**
+   * @brief Verifica se o CNPJ e o CPF passa em todas as restricoes
+   *
+   * @param certificado que sera verificado
+   * @return true Verdadeiro se passa em todas as condicoes
+   * @return false Falso se nao passa em pelo menos uma das condicoes
+   */
+  bool verificaCertificado(long int certificado, const bool pessoa_juridica);
+
+ private:
+  /**
+   * @brief Container que armazena o nome, email e certificado da pessoa(CPF ou CNPJ)
+   */
+  std::string _nome;
+  std::string _email;
+  long int _certificado;
+};
+#endif
