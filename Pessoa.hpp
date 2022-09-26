@@ -44,7 +44,7 @@ class Pessoa {
    * @return true Verdadeiro se passa em todas as condicoes
    * @return false Falso se nao passa em pelo menos uma das condicoes
    */
-  bool verificaCertificado(int certificado, const bool pessoa_juridica);
+  bool verificaCertificado(long int certificado, const bool pessoa_juridica);
 
  private:
   /**
