@@ -57,4 +57,4 @@ bool verificaCertificado(long int certificado, const bool pessoa_juridica){
     return 0;
     }
     
-  } 
+  }

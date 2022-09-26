@@ -18,11 +18,11 @@ class Pessoa {
 
   /**
    * @brief inicializa o CPF do cadastrado.*/
-  void setCpf(const int &certificado);
+  void setCpf(const long int &certificado);
 
   /**
    * @brief inicializa o CNPJ do cadastrado.*/
-  void setCNPJ(const int &certificado);
+  void setCNPJ(const long int &certificado);
 
   /**
    * @brief Retorna o nome do cadastrado.*/
@@ -34,7 +34,7 @@ class Pessoa {
 
   /**
    * @brief Retorna o certificado do cadastrado.*/
-  int getCertificado() const;
+  long int getCertificado() const;
 
  private:
   /**
@@ -44,7 +44,7 @@ class Pessoa {
    * @return true Verdadeiro se passa em todas as condicoes
    * @return false Falso se nao passa em pelo menos uma das condicoes
    */
-  bool verificaCertificado(int certificado, const bool pessoa_juridica);
+  bool verificaCertificado(long int certificado, const bool pessoa_juridica);
 
  private:
   /**
@@ -52,6 +52,6 @@ class Pessoa {
    */
   std::string _nome;
   std::string _email;
-  int _certificado;
+  long int _certificado;
 };
 #endif

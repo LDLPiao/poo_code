@@ -10,14 +10,14 @@ Pessoa::Pessoa(const std::string& nome,
       
 }
 
-void Pessoa::setCpf(const int &certificado){
+void Pessoa::setCpf(const long int &certificado){
   if(verificaCertificado(certificado, 0) == 1)
   this->_certificado = certificado;
   else
   std::cout << "CPF invalido" << std::endl;
 }
 
-void Pessoa::setCNPJ(const int &certificado){
+void Pessoa::setCNPJ(const long int &certificado){
   if(verificaCertificado(certificado, 1) == 1)
   this->_certificado = certificado;
   else
@@ -30,17 +30,17 @@ std::string Pessoa::getNome() const{
 std::string Pessoa::getEmail() const{
   return this->_email;
 }
-int Pessoa::getCertificado() const{
+long int Pessoa::getCertificado() const{
   return this->_certificado;
 }
 
-bool verificaCertificado(int certificado, const bool pessoa_juridica){
+bool verificaCertificado(long int certificado, const bool pessoa_juridica){
   
 
     if (certificado == 0)
         return 0;
     
-  int count = 0;
+  long int count = 0;
     while (certificado != 0) {
         certificado = certificado / 10;
         ++count;
@@ -57,5 +57,4 @@ bool verificaCertificado(int certificado, const bool pessoa_juridica){
     return 0;
     }
     
-  } 
-}
+  }
