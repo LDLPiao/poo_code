@@ -18,11 +18,11 @@ class Pessoa {
 
   /**
    * @brief inicializa o CPF do cadastrado.*/
-  void setCpf(const int &certificado);
+  void setCpf(const long int &certificado);
 
   /**
    * @brief inicializa o CNPJ do cadastrado.*/
-  void setCNPJ(const int &certificado);
+  void setCNPJ(const long int &certificado);
 
   /**
    * @brief Retorna o nome do cadastrado.*/
@@ -34,7 +34,7 @@ class Pessoa {
 
   /**
    * @brief Retorna o certificado do cadastrado.*/
-  int getCertificado() const;
+  long int getCertificado() const;
 
  private:
   /**
@@ -52,6 +52,6 @@ class Pessoa {
    */
   std::string _nome;
   std::string _email;
-  int _certificado;
+  long int _certificado;
 };
 #endif
