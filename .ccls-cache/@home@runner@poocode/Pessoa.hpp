@@ -36,15 +36,6 @@ class Pessoa {
    * @brief Retorna o certificado do cadastrado.*/
   long int getCertificado() const;
 
- private:
-  /**
-   * @brief Verifica se o CNPJ e o CPF passa em todas as restricoes
-   *
-   * @param certificado que sera verificado
-   * @return true Verdadeiro se passa em todas as condicoes
-   * @return false Falso se nao passa em pelo menos uma das condicoes
-   */
-  bool verificaCertificado(long int certificado, const bool pessoa_juridica);
 
  private:
   /**

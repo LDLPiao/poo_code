@@ -3,13 +3,14 @@
 #include <iostream>
 
 Funcionario::Funcionario(const std::string nome, const std::string email,
-                         const int cpf, const Data nascimento,
-                         const std::string endereco, const int matricula)
+                         const long int cpf, const Data nascimento,
+                         const std::string endereco, const int matricula, const Cargo & cargo)
     : Pessoa(nome, email) {
   setCpf(cpf);
   setNascimento(nascimento);
   setEndereco(endereco);
   setMatricula(matricula);
+  setCargo(*_cargo);
 }
 
 Data Funcionario::getNascimento() const { return _nascimento; }

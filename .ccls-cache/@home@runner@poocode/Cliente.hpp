@@ -28,7 +28,7 @@ class Cliente : public Pessoa{
 
   Cliente(std::string nome,
           std::string email,
-          const int certificado,
+          const long int certificado,
           const int telefone,
           bool tipo = 0);
 

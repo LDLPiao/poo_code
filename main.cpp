@@ -1,4 +1,3 @@
-#include "Funcionario.hpp"
 #include <iostream>
 
 int main() {

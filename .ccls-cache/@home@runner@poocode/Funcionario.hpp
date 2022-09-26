@@ -4,11 +4,11 @@
 #include "Pessoa.hpp"
 #include "Data.h"
 #include "Admissao.hpp"
+#include "Cargo.hpp"
 
 #include <string>
 #include <list>
 
-class Cargo;
 class Departamento;
 
 /**
@@ -73,7 +73,7 @@ class Funcionario: public Pessoa {
    * @param endereco endereço de moradia do funcionário
    * @param matricula número de matrícula do funcionário
    */
-  Funcionario(const std::string nome, const std::string email, const int cpf, const Data nascimento, const std::string endereco, const int matricula);
+  Funcionario(const std::string nome, const std::string email, const long int cpf, const Data nascimento, const std::string endereco, const int matricula, const Cargo & cargo);
 
   /**
    * @brief Retorna a data de nascimento do funcionário

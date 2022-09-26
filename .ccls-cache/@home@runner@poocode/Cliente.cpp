@@ -4,7 +4,7 @@
 
 Cliente::Cliente(std::string nome,
                  std::string email,
-                 const int certificado,
+                 const long int certificado,
                  const int telefone,
                  bool tipo)
 : Pessoa(nome, email), _tipo(tipo), _telefone(telefone)
@@ -13,10 +13,10 @@ Cliente::Cliente(std::string nome,
     else setCpf(certificado);
 }
 
-void Cliente::setTipo(bool tipo):_tipo(tipo);
+void Cliente::setTipo(bool tipo){_tipo = tipo;}
 
-bool Cliente::getTipo(){return _tipo}
+bool Cliente::getTipo(){return _tipo;}
 
-void Cliente::setTelefone(int telefone):_telefone(telefone);
+void Cliente::setTelefone(int telefone){_telefone = telefone;}
 
-int Cliente::getTelefone(){return _telefone}
+int Cliente::getTelefone(){return _telefone;}
