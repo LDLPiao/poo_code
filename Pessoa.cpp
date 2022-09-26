@@ -34,7 +34,7 @@ int Pessoa::getCertificado() const{
   return this->_certificado;
 }
 
-bool verificaCertificado(int certificado, const bool pessoa_juridica){
+bool verificaCertificado(long int certificado, const bool pessoa_juridica){
   
 
     if (certificado == 0)
