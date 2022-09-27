@@ -27,7 +27,7 @@ list<Admissao> Funcionario::getAdmissoes() const { return _admissoes; }
 
 list<Data> Funcionario::getDemissoes() const { return _demissoes; }
 
-double Funcionario::getSalarioatual() const { return _registro_salario.back().getValor; }
+double Funcionario::getSalarioatual() const { return _registro_salario.back().getValor(); }
 
 Cargo *Funcionario::getCargo() const { return _cargo; }
 

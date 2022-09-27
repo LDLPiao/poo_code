@@ -5,13 +5,12 @@
 #include "Data.h"
 #include "Admissao.hpp"
 #include "Cargo.hpp"
-//#include "Salario.hpp"
+#include "Salario.hpp"
 
 #include <string>
 #include <list>
 
 class Departamento;
-class Salario;
 
 /**
  * @brief Classe que armazena e gerencia as informacoes do funcionário.
