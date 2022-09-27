@@ -1,11 +1,13 @@
 #include "Lote.hpp"
 
-Lote::Lote(const Data& data, const long int& numero, const long int& codigo, const int quantidade){
+Lote::Lote(const Data& data, const long int& numero, const long int& codigo, const int& quantidade){
     this->_data = data;
     this->_numero = numero;
     this->_codigo = codigo;
     this->_quantidade = quantidade;
 }
+
+
 
 
 Data Lote::getData() const{
@@ -24,3 +26,4 @@ long int Lote::getCodigo() const{
 int Lote::getQuantidade() const{
   return this->_quantidade;
 }
+
