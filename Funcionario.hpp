@@ -5,11 +5,13 @@
 #include "Data.h"
 #include "Admissao.hpp"
 #include "Cargo.hpp"
+//#include "Salario.hpp"
 
 #include <string>
 #include <list>
 
 class Departamento;
+class Salario;
 
 /**
  * @brief Classe que armazena e gerencia as informacoes do funcionário.
@@ -96,7 +98,7 @@ class Funcionario: public Pessoa {
   /**
    * @brief Retorna o registro de salários do funcionário
    */
-  list<double> getRegistroSalario() const;
+  list<Salario> getRegistroSalario() const;
 
   /**
    * @brief Retorna as admissões do funcionário

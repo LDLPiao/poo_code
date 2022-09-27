@@ -36,6 +36,9 @@ class Pessoa {
    * @brief Retorna o certificado do cadastrado.*/
   long int getCertificado() const;
 
+  /**
+   * @brief Retorna a pessoa com nome menor, em ordem alfabética.*/
+  bool operator<(const Pessoa &outro);
 
  private:
   /**
