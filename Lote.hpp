@@ -12,8 +12,7 @@
 class Lote {
  public:
   /**
-   * @brief Adiciona um novo pedido a lista de pedidos processados.
-   * @param p Representa o novo pedido que foi recebido.
+   * @brief Adiciona um novo lote
    */
   Lote(const Data& data, const long int& numero, const long int& codigo, const int quandtidade);
   
