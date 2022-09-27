@@ -1,9 +1,9 @@
 #include "Venda.hpp"
 
-Venda::Venda(Data data, int quantidade, int numerolote) {
+Venda::Venda(Data data, int quantidade) {
   data_ = data;
   qnt_ = quantidade;
-  loteNum_ = numerolote;
+  loteNum_ = 0;
 }
 
 void Venda::setData(Data data) {
@@ -18,19 +18,22 @@ Data Venda::getQnt() {
     return qnt_;
 }
 
-Produto* getProduto() const{
+Produto* Venda::getProduto() const{
     return produto_;
 }
 
-void setProduto(Produto &produto){
+void Venda::setProduto(Produto &produto){
     produto_ = produto;
 }
 
-Data setLoteNum(int num){
+Data Venda::setLoteNum(int num){
   loteNum_ = num;
 }
 
-Data getLoteNum(){
+Data Venda::getLoteNum(){
   return loteNum_;
 }
 
+Cliente* Venda::getCliente() const{
+  return cliente_;
+}

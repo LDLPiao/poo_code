@@ -5,6 +5,7 @@
 #include "Cliente.hpp"
 #include "Lote.hpp"
 Class Produto;
+Class Cliente;
 
 /**
  * @brief Classe responsavel pelo armazenamento e gerenciamento das informacoes
@@ -20,7 +21,7 @@ class Venda{
    * @brief Construtor da classe.
    */
 
-  Venda(Data data, int quantidade, int numerolote);
+  Venda(Data data, int quantidade);
 
   /**
    * @brief Atribui um valor à _data.
@@ -56,14 +57,24 @@ class Venda{
   void setProduto(Produto &produto);
 
   /**
-   * @brief Atualiza o numero do lote da venda.
+   * @brief Atualiza o numero do lote de produção.
    */
   Data setLoteNum(int num);
 
   /**
-   * @brief Retorna o valor atual do lote da venda.
+   * @brief Retorna o valor atual do lote de produção.
    */
   Data getLoteNum();
+
+  /**
+   * @brief Ponteiro para o produto de Cliente
+   */
+  Cliente* cliente_;
+
+  /**
+   * @brief Retorna o ponteiro de Cliente
+   */
+  Cliente* getCliente() const;
 
 };
 #endif
