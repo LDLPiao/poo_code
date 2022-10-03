@@ -4,8 +4,8 @@
 #include "Data.h"
 #include "Cliente.hpp"
 #include "Lote.hpp"
-Class Produto;
-Class Cliente;
+class Produto;
+class Cliente;
 
 /**
  * @brief Classe responsavel pelo armazenamento e gerenciamento das informacoes

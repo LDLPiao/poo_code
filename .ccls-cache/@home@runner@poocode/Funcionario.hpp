@@ -5,6 +5,7 @@
 #include "Data.h"
 #include "Admissao.hpp"
 #include "Cargo.hpp"
+#include "Salario.hpp"
 
 #include <string>
 #include <list>
@@ -37,7 +38,7 @@ class Funcionario: public Pessoa {
    * @brief Registros com o histórico de salários do funcionário,
    * o primeiro da lista é o mais recente e atual.
    */
-  list<double> _registro_salario;
+  list<Salario> _registro_salario;
 
   /**
    * @brief Registros de admissoes do funcionario,
@@ -96,7 +97,7 @@ class Funcionario: public Pessoa {
   /**
    * @brief Retorna o registro de salários do funcionário
    */
-  list<double> getRegistroSalario() const;
+  list<Salario> getRegistroSalario() const;
 
   /**
    * @brief Retorna as admissões do funcionário

@@ -3,8 +3,9 @@
 
 #include "Data.h"
 #include "Cliente.hpp"
-#include "Produto.hpp"
 #include "Lote.hpp"
+class Produto;
+class Cliente;
 
 /**
  * @brief Classe responsavel pelo armazenamento e gerenciamento das informacoes
@@ -14,13 +15,13 @@ class Venda{
  private:
   Data data_;
   int qnt_;
+  int loteNum_;
  public:
-
   /**
    * @brief Construtor da classe.
    */
 
-  Admissao(Data data, int quantidade);
+  Venda(Data data, int quantidade);
 
   /**
    * @brief Atribui um valor à _data.
@@ -33,6 +34,47 @@ class Venda{
    * @brief Retorna o valor contido em _data.
    */
   Data getData();
+
+  /**
+   * @brief Retorna o valor contido em qnt_.
+   */
+  Data getQnt();
+
+  /**
+   * @brief Ponteiro para o produto da Venda
+   */
+  Produto* produto_;
+
+  /**
+   * @brief Retorna o produto da venda
+   */
+  Produto* getProduto() const;
+
+  /**
+   * @brief Atualiza o produto da venda
+   * @param Novo produto
+   */
+  void setProduto(Produto &produto);
+
+  /**
+   * @brief Atualiza o numero do lote de produção.
+   */
+  Data setLoteNum(int num);
+
+  /**
+   * @brief Retorna o valor atual do lote de produção.
+   */
+  Data getLoteNum();
+
+  /**
+   * @brief Ponteiro para o produto de Cliente
+   */
+  Cliente* cliente_;
+
+  /**
+   * @brief Retorna o ponteiro de Cliente
+   */
+  Cliente* getCliente() const;
 
 };
 #endif

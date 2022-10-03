@@ -23,7 +23,7 @@ Produto* Venda::getProduto() const{
 }
 
 void Venda::setProduto(Produto &produto){
-    produto_ = produto;
+    produto_ = &produto;
 }
 
 Data Venda::setLoteNum(int num){

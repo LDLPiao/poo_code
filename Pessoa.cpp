@@ -57,13 +57,16 @@ long int Pessoa::getCertificado() const{
 }
 
 bool Pessoa::operator<(const Pessoa &outro){
-  (this->getNome().compare(outro.getNome()) < 0) ? return true : return false;
+  if(this->getNome().compare(outro.getNome()) < 0) return true;
+  else return false;
 }
 
 bool Pessoa::operator>(const Pessoa &outro){
-  (this->getNome().compare(outro.getNome()) > 0) ? return true : return false;
+  if(this->getNome().compare(outro.getNome()) > 0) return true;
+  else return false;
 }
 
 bool Pessoa::operator=(const Pessoa &outro){
-  (this->getNome().compare(outro.getNome()) == 0) ? return true : return false;
+  if (this->getNome().compare(outro.getNome()) == 0) return true;
+  else return false;
 }
