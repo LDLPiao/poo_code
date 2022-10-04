@@ -26,7 +26,7 @@ class Salario{
   /**
    * @brief Retorna o valor contido em _data.
    */
-  Data getData();
+  Data getData() const;
 
   /**
    * @brief Atribui um valor à _Salario.
@@ -38,6 +38,6 @@ class Salario{
   /**
    * @brief Retorna o valor contido em _salario.
    */
-  double getValor();
+  double getValor() const;
 };
 #endif
