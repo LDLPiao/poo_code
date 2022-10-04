@@ -19,7 +19,7 @@ std::string Funcionario::getEndereco() const { return _endereco; }
 
 int Funcionario::getMatricula() const { return _matricula; }
 
-list<Salario> Funcionario::getRegistroSalario() const {
+list<Dinheiro> Funcionario::getRegistroDinheiro() const {
   return _registro_salario;
 }
 
@@ -27,7 +27,7 @@ list<Admissao> Funcionario::getAdmissoes() const { return _admissoes; }
 
 list<Data> Funcionario::getDemissoes() const { return _demissoes; }
 
-double Funcionario::getSalarioatual() const { return _registro_salario.back().getValor(); }
+double Funcionario::getDinheiroatual() const { return _registro_salario.back().getValor(); }
 
 Cargo *Funcionario::getCargo() const { return _cargo; }
 
@@ -43,10 +43,6 @@ void Funcionario::setEndereco(const std::string endereco) {
 
 void Funcionario::setMatricula(const int matricula) { _matricula = matricula; }
 
-void Funcionario::setRegistroSalario(const list<double> registro_salario) {
-  _registro_salario = registro_salario;
-}
-
 void Funcionario::setCargo(Cargo &cargo) { _cargo = &cargo; }
 
 void Funcionario::setDepartamento(Departamento &departamento) {
@@ -55,7 +51,7 @@ void Funcionario::setDepartamento(Departamento &departamento) {
 
 void Funcionario::addSalario(const double salario) {
   Data aux;
-  Salario novo(salario, aux.dateNow);
+  Dinheiro novo(salario, aux.dateNow());
   _registro_salario.push_back(novo);
 }
 

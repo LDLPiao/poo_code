@@ -37,8 +37,16 @@ class Pessoa {
   long int getCertificado() const;
 
   /**
-   * @brief Retorna a pessoa com nome menor, em ordem alfabética.*/
+   * @brief Retorna se a pessoa tem nome menor, em ordem alfabética.*/
   bool operator<(const Pessoa &outro);
+ /**
+   * @brief Retorna se a pessoa tem nome maior, em ordem alfabética.*/
+bool operator>(const Pessoa &outro);
+
+/**
+   * @brief Retorna as pessoas tem mesmo nome.*/
+bool operator=(const Pessoa &outro);
+
 
  private:
   /**

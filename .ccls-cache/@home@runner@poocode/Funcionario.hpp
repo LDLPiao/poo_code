@@ -5,7 +5,7 @@
 #include "Data.h"
 #include "Admissao.hpp"
 #include "Cargo.hpp"
-#include "Salario.hpp"
+#include "Dinheiro.hpp"
 
 #include <string>
 #include <list>
@@ -38,7 +38,7 @@ class Funcionario: public Pessoa {
    * @brief Registros com o histórico de salários do funcionário,
    * o primeiro da lista é o mais recente e atual.
    */
-  list<Salario> _registro_salario;
+  list<Dinheiro> _registro_salario;
 
   /**
    * @brief Registros de admissoes do funcionario,
@@ -97,7 +97,7 @@ class Funcionario: public Pessoa {
   /**
    * @brief Retorna o registro de salários do funcionário
    */
-  list<Salario> getRegistroSalario() const;
+  list<Dinheiro> getRegistroDinheiro() const;
 
   /**
    * @brief Retorna as admissões do funcionário
@@ -113,7 +113,7 @@ class Funcionario: public Pessoa {
    * @brief Retorna o ultimo salario do registro, o atual,  do 
    * funcionário
    */
-  double getSalarioatual() const;
+  double getDinheiroatual() const;
 
   /**
    * @brief Retorna o cargo do funcionário
@@ -142,12 +142,6 @@ class Funcionario: public Pessoa {
    * @param Nova matrícula
    */
   void setMatricula(const int matricula);
-
-  /**
-   * @brief Adiciona lista de salários, substituindo a anterior
-   * @param Nova lista de salários
-   */
-  void setRegistroSalario(const list<double> registro_salario);
 
   /**
    * @brief Atualiza o cargo do funcionário
