@@ -16,6 +16,7 @@ class Dinheiro{
    */
 
   Dinheiro(double dinheiro,Data data);
+  Dinheiro();
 
   /**
    * @brief Atribui um valor à _data.

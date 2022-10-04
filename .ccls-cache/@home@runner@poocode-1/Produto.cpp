@@ -30,7 +30,7 @@ void Produto::addLote(int numero_lote, int quantidade)
 
 void Produto::setValor(Data dia, double valor)
 {
-    this->_valor.insert(std::pair<Data,double>(dia,valor));
+    this->_valor.setValor(valor);
 }
 
 void Produto::Vender(int quantidade)

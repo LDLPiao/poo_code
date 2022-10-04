@@ -9,12 +9,14 @@ class Dinheiro{
  private:
   Data _data;
   double _valor; 
+
+ public:
   /**
-   * @brief Atribui um valor à _valor.
-   * Não usar fora do construtor, já que
-   * o valor não muda.
+   * @brief Construtor da classe.
    */
-  void setValor(double salario);
+
+  Dinheiro(double dinheiro,Data data);
+  Dinheiro();
 
   /**
    * @brief Atribui um valor à _data.
@@ -23,19 +25,17 @@ class Dinheiro{
    */
   void setData(Data data);
 
- public:
-  /**
-   * @brief Construtor da classe.
-   */
-
-  Dinheiro(double dinheiro,Data data);
-
   /**
    * @brief Retorna o valor contido em _data.
    */
   Data getData() const;
 
-
+  /**
+   * @brief Atribui um valor à _valor.
+   * Não usar fora do construtor, já que
+   * o valor não muda.
+   */
+  void setValor(double salario);
 
   /**
    * @brief Retorna o valor contido em _valor.

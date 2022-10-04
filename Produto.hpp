@@ -24,7 +24,7 @@ class Produto{
 
    /**
    * @brief Valor do produto
-   */Dinheiro _valor(double dinheiro,Data data);
+   */Dinheiro _valor;
 
    /**
    * @brief Categoria do produto
