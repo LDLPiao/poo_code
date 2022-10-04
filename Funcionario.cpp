@@ -57,15 +57,13 @@ void Funcionario::addSalario(const double salario) {
 
 void Funcionario::Admitir(const double salario, Cargo &cargo,
                           Departamento &departamento) {
-  Data aux;
-  getAdmissoes().push_back({aux.dateNow(), salario});
+  getAdmissoes().push_back({Data::dateNow(), salario});
   setCargo(cargo);
   setDepartamento(departamento);
 }
 
 void Funcionario::Demitir() {
-  Data aux;
-  getDemissoes().push_back(aux.dateNow());
+  getDemissoes().push_back(Data::dateNow());
   addSalario(0);
   _cargo = nullptr;
   _departamento = nullptr;
