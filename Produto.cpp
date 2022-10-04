@@ -2,6 +2,7 @@
 #include <queue>
 #include <iostream>
 #include "Data.h"
+#include "Dinheiro.hpp"
 
 
 

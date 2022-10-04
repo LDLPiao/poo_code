@@ -6,6 +6,7 @@
 #include <map>
 #include "Data.h"
 #include <queue>
+#include "Dinheiro.hpp"
 
 /**
  * @brief Classe responsavel pelo armazenamento e gerenciamento das informacoes
@@ -23,7 +24,7 @@ class Produto{
 
    /**
    * @brief Valor do produto
-   */std::map<Data, double> _valor;
+   */Dinheiro _valor(double dinheiro,Data data);
 
    /**
    * @brief Categoria do produto
