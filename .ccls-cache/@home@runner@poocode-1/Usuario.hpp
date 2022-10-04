@@ -12,7 +12,7 @@ class Usuario{
  private:
   /**
    * @brief Variável que guarda se já existe uma instância de usuário.
-   */static Usuario* _instance = std::NULLPTR;
+   */static Usuario* _instance = nullptr;
 
   /**
    * @brief Construtor da classe.
