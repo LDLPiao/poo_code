@@ -12,7 +12,7 @@ class Usuario{
  private:
   /**
    * @brief Variável que guarda se já existe uma instância de usuário.
-   */static bool instance = false;
+   */static Usuario* _instance = NULLPTR;
 
   /**
    * @brief Construtor da classe.
