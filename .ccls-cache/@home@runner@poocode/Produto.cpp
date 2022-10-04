@@ -23,6 +23,7 @@ Produto::Produto(std::string nome,
 
 void Produto::addLote(int numero_lote, int quantidade)
 {
+    this->_qtd_total += quantidade;
     this->_qtd_por_lote.push(std::make_pair(quantidade, numero_lote));
 }
 
@@ -38,11 +39,13 @@ void Produto::Vender(int quantidade)
     if(this->_qtd_por_lote.back().first > 0)
     {
         this->_qtd_por_lote.back().first --;
+        this->_qtd_total--;
     }
     else
     {
         this->_qtd_por_lote.pop();
         this->_qtd_por_lote.back().first --;
+        this->_qtd_total--;
     }
     if (quantidade > 0)this->Vender(quantidade-1);
 }
