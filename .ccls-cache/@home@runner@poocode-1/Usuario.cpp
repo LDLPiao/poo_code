@@ -5,6 +5,8 @@
 
 Usuario::Usuario(){};
 
+Usuario* Usuario::_instance = nullptr;
+
 Usuario* Usuario::getInstance()
 {
     if(_instance == nullptr)
