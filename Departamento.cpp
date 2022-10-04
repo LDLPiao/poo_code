@@ -32,3 +32,7 @@ void Departamento::admitirFuncionario(Funcionario* a, const double salario, Carg
   funcionarios_.push_back(a);
   a->Admitir(salario, cargo, (*this));
 }
+
+std::list<Funcionario*> Departamento::getFuncionarios() { return funcionarios_; }
+
+std::string Departamento::getNomeDepartamento() { return nome_; }
