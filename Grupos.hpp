@@ -29,7 +29,7 @@ public:
    *
    * @param a string da permissao
    */
-  void removeFuncionario(std::string a);
+  void removePermissao(std::string a);
 
   /**
    * @brief Retorna lista de permissoes
