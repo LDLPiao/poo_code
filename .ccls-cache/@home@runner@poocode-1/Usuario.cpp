@@ -1,20 +1,20 @@
 #include <iostream>
 #include <string.h>
-#include "Usuario"
+#include "Usuario.hpp"
 
 
-Usuario::Usuario()
+Usuario::Usuario(){};
 
-static Usuario* getInstance()
+Usuario* Usuario::getInstance()
 {
-    if(_instance == NULLPTR)
+    if(_instance == nullptr)
     {
         _instance = new Usuario();
     }
-    else return _instance;
+    return _instance;
 }
 
-checkPermissao(std::string)
+bool Usuario::checkPermissao(std::string)
 {
 
 }
