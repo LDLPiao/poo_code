@@ -17,3 +17,7 @@ void Cargo::removeFuncionario(int a){
     if (*it == a){ matriculas_.erase(it++);}
   }
 }
+
+std::list<int> Cargo::getMatriculas() { return matriculas_; }
+
+std::string Cargo::getNomeCargo() { return nome_; }
