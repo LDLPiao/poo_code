@@ -14,7 +14,7 @@ Usuario* Usuario::getInstance(std::list<std::string> Grupos)
 
     _instance->limpaPermissao(); // Garante que cada nova intância não herda permissões de outros usuários
     _instance->carregaPermissao(Grupos);
-    
+
     return _instance;
 }
 
@@ -28,5 +28,6 @@ bool Usuario::checkPermissao(std::string permissao)
 
 void Usuario::carregaPermissao(std::list<std::string>)
 {
-
+    std::list<Grupos> grupos_de_permissoes;
+    grupos_de_permissoes = *Empresa.getGrupos(); // Eu preciso da intância de empresa!!!
 }

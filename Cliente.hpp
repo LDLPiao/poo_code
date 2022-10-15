@@ -28,9 +28,11 @@ class Cliente: public Pessoa {
 
   Cliente(std::string nome,
           std::string email,
-          const long int certificado,
+          std::string certificado,
           const int telefone,
           bool tipo = 0);
+
+  Cliente(){};
 
   /**
    * @brief Atribui um valor à _tipo.

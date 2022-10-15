@@ -1,6 +1,7 @@
 #ifndef USUARIO_H
 #define USUARIO_H
 
+#include "Grupos.hpp"
 #include <iostream>
 #include <string.h>
 #include <set>
