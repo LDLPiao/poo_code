@@ -47,6 +47,21 @@ public:
    * @param a ponteiro para o funcionário desejado
    */
   void admitirFuncionario(Funcionario* a, const double salario, Cargo &cargo);
+
+  /**
+   * @brief Retorna o valor contido em _tipo.
+   */
+  bool getTipo();
+
+  /**
+   * @brief Retorna lista de funcionarios
+   */
+  std::list<Funcionario*> getFuncionarios();
+
+  /**
+   * @brief Retorna nome do departamento
+   */
+  std::string getNomeDepartamento();
 };
 
 #endif

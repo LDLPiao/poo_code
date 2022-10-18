@@ -41,3 +41,4 @@ public:
    */
   std::string getNomeCargo();
 };
+#endif

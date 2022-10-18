@@ -22,3 +22,4 @@ class Cadastro{
    */
   std::list<Grupos*> getGrupos();
 }
+#endif

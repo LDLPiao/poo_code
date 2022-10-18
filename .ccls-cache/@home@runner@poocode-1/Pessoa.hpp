@@ -18,11 +18,11 @@ class Pessoa {
 
   /**
    * @brief inicializa o CPF do cadastrado.*/
-  void setCpf(const long int &certificado);
+  void setCpf(const std::string &certificado);
 
   /**
    * @brief inicializa o CNPJ do cadastrado.*/
-  void setCNPJ(const long int &certificado);
+  void setCNPJ(const std::string &certificado);
 
   /**
    * @brief Retorna o nome do cadastrado.*/
@@ -34,18 +34,19 @@ class Pessoa {
 
   /**
    * @brief Retorna o certificado do cadastrado.*/
-  long int getCertificado() const;
+  std::string getCertificado() const;
 
   /**
    * @brief Retorna se a pessoa tem nome menor, em ordem alfabética.*/
   bool operator<(const Pessoa &outro);
- /**
+  
+  /**
    * @brief Retorna se a pessoa tem nome maior, em ordem alfabética.*/
-bool operator>(const Pessoa &outro);
+  bool operator>(const Pessoa &outro);
 
-/**
+  /**
    * @brief Retorna as pessoas tem mesmo nome.*/
-bool operator=(const Pessoa &outro);
+  bool operator=(const Pessoa &outro);
 
 
  private:
@@ -54,6 +55,6 @@ bool operator=(const Pessoa &outro);
    */
   std::string _nome;
   std::string _email;
-  long int _certificado;
+  std::string _certificado;
 };
 #endif

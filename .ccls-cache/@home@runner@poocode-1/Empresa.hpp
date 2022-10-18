@@ -8,6 +8,7 @@
 #include "Lote.hpp"
 #include "Venda.hpp"
 #include "Departamento.hpp"
+#include "Grupos.hpp"
 
 #include <iostream>
 #include <list>
@@ -25,6 +26,7 @@ private:
   std::list<Cliente> _clientes;
   std::list<Lote> _lotes;
   std::list<Venda> _vendas;
+  std::list<Grupos> _grupos_de_permissoes;
  /**
    * @brief Construtor padrao que cria a empresa
    *
@@ -54,6 +56,7 @@ public:
   std::list<Cliente>* getClientes();
   std::list<Lote>* getLotes();
   std::list<Venda>* getVendas();
+  std::list<Grupos>* getGrupos();
 
   /**
    * @brief Adiciona um funcionário pra lista de funcionarios

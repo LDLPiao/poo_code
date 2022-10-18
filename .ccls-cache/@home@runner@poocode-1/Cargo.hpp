@@ -30,6 +30,15 @@ public:
    * @param a numero de matricula
    */
   void removeFuncionario(int a);
-};
 
+  /**
+   * @brief Retorna lista de matriculas
+   */
+  std::list<int> getMatriculas();
+
+  /**
+   * @brief Retorna nome do cargo
+   */
+  std::string getNomeCargo();
+};
 #endif

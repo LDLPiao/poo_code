@@ -5,16 +5,23 @@ Usuario::Usuario(){};
 
 Usuario* Usuario::_instance = nullptr;
 
-Usuario* Usuario::getInstance(std::list<std::string> Grupos)
+Usuario* Usuario::Login(std::list<std::string> Grupos)
 {
     if(_instance == nullptr)
     {
         _instance = new Usuario();
     }
-
-    _instance->limpaPermissao(); // Garante que cada nova intância não herda permissões de outros usuários
     _instance->carregaPermissao(Grupos);
 
+    return _instance;
+}
+
+Usuario* Usuario::getInstance()
+{
+    if(_instance == nullptr)
+    {
+        _instance = new Usuario();
+    }
     return _instance;
 }
 

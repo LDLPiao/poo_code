@@ -28,8 +28,12 @@ class Usuario{
 
   /**
    * @brief Função que retorna ou gera uma instância de Usuario.
+   */static Usuario* getInstance();
+
+  /**
+   * @brief Função que retorna ou gera uma instância de Usuario.
    * @param Grupos_de_permissão, list que contem os nomes de todos os grupos no qual o usuario pertence.
-   */static Usuario* getInstance(std::list<std::string>);
+   */static  getInstance();
 
   /**
    * @brief Função que retorna se o usuário possui uma permissão específica.
