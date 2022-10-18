@@ -5,14 +5,14 @@ Usuario::Usuario(){};
 
 Usuario* Usuario::_instance = nullptr;
 
-Usuario* Usuario::Login(std::list<std::string> Grupos)
+Usuario* Usuario::Login(Cadastro* infos)
 {
     if(_instance == nullptr)
     {
         _instance = new Usuario();
     }
-    _instance->carregaPermissao(Grupos);
-
+    _instance->limpaPermissao();
+    _instance->carregaPermissao(infos->getGrupos());
     return _instance;
 }
 
@@ -33,8 +33,16 @@ bool Usuario::checkPermissao(std::string permissao)
     return false;
 }
 
-void Usuario::carregaPermissao(std::list<std::string>)
+void Usuario::carregaPermissao(std::list<Grupos*> grupos)
 {
-    std::list<Grupos> grupos_de_permissoes;
-    grupos_de_permissoes = *Empresa.getGrupos(); // Eu preciso da intância de empresa!!!
+    std::list<std::string> aux;
+    for(auto it1 = grupos.begin(); it1 != grupos.end(); it1++)
+    {
+      aux = (*it1)->getPermissoes();
+      
+      for(auto it2 = aux.begin(); it2 != aux.end(); it2++)
+      {
+        _permissoes.insert(*it2);
+      }
+    }
 }

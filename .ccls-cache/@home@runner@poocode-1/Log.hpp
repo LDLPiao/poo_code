@@ -1,7 +1,7 @@
 #ifndef LOG_H
 #define LOG_H
 
-#include "usuario.hpp"
+#include "Cadastro.hpp"
 #include "Data.h"
 #include <iostream>
 #include <list>
@@ -11,12 +11,13 @@ class Log {
 private:
   Data data_;
   std::string entidade_;
+  Cadastro* cadastro_;
 public:
  /**
    * @brief Construtor da classe.
    */
 
-  Admissao(Data data, std::string entidade);
+  Log(Data data, std::string entidade, Cadastro* &cadastro);
 
   /**
    * @brief Atribui um valor a entidade_.
@@ -40,6 +41,9 @@ public:
    * @brief Retorna o valor contido em data_.
    */
   Data getData();
+
+  Cadastro* getCadastro();
+  void setCadastro(Cadastro &cadastro);
 
   /**
    * @brief print do log

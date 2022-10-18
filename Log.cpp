@@ -1,8 +1,9 @@
 #include "Log.hpp"
 
-Log::Log(Data data, std::string entidade) {
-  data_ = data;
-  entidade_ = entidade;
+Log::Log(Data data, std::string entidade, Cadastro* &cadastro) {
+    data_ = data;
+    entidade_ = entidade;
+    cadastro_ = cadastro;
   }
 
 void Log::setData(Data data) {
@@ -20,3 +21,12 @@ void Log::setEntidade(std::string entidade) {
 std::string Log::getEntidade() {
   return entidade_;
 }
+
+Cadastro* Log::getCadastro() {
+    return cadastro_;
+}
+
+
+
+void Log::setCadastro(Cadastro &cadastro) { cadastro_ = &cadastro; }
+
