@@ -1,13 +1,11 @@
 #ifndef USUARIO_H
 #define USUARIO_H
 
-#include <string.h>
-#include <set>
 #include <list>
 #include "Log.hpp"
 
 /**
- * @brief Singleton que garante que existe apenas um usuario
+ * @brief Singleton que garante que existe apenas uma lista de Log's
  */
 class Log_List{
  private:
@@ -17,7 +15,7 @@ class Log_List{
 
   /**
    * @brief Set de permissões que o usuário logado possui.
-   *///std::set<std::string> _permissoes;
+   */std::list<Log*> _lista;
 
   /**
    * @brief Construtor da classe.
@@ -31,6 +29,6 @@ class Log_List{
 
   /**
    * @brief Função que adiciona Log à Log_List.
-   */void addLog(Log);
+   */void addLog(Log*);
 };
 #endif
