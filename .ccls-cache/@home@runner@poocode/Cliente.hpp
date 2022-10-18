@@ -9,7 +9,7 @@
  * @brief Classe responsavel pelo armazenamento e gerenciamento das informacoes
  * de um cliente.
  */
-class Cliente : public Pessoa{
+class Cliente: public Pessoa {
  private:
   /**
    * @brief Booleando que mostra se o cliente é PJ ou PF
@@ -28,15 +28,12 @@ class Cliente : public Pessoa{
 
   Cliente(std::string nome,
           std::string email,
-          const long int certificado,
+          std::string certificado,
           const int telefone,
           bool tipo = 0);
 
-  /**
-   * @brief Destrutor da classe.
-   */
+  Cliente(){};
 
-  ~Cliente();
   /**
    * @brief Atribui um valor à _tipo.
    * True => Pessoa jurídica
