@@ -6,7 +6,7 @@ LogLeitura::LogLeitura(Data data,
                  std::string entidade,
                  Cadastro* cadastro,
                  std::string atributo)
-: Pessoa(data, entidade, cadastro) {
+: Log(data, entidade, cadastro) {
   setAtributo(atributo);
 }
 
