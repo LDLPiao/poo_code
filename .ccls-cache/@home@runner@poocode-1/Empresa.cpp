@@ -6,7 +6,7 @@
 
 Empresa* Empresa::_instance = nullptr;
 
-Empresa* Empresa::getEmpresa(){
+Empresa* Empresa::getInstance(){
     if(_instance == nullptr)
     {
         _instance = new Empresa();

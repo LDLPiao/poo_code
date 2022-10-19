@@ -47,7 +47,7 @@ public:
   /**
    * @brief retorna ponteiro para a empresa
    */
-  static Empresa* getEmpresa();
+  static Empresa* getInstance();
 
   std::list<Funcionario>* getFuncionarios();
   std::list<Cargo>* getCargos();

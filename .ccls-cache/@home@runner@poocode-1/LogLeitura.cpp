@@ -6,12 +6,8 @@ LogLeitura::LogLeitura(Data data,
                  std::string entidade,
                  Cadastro* cadastro,
                  std::string atributo)
-: Pessoa(nome, email) {
-  setCpf(cpf);
-  setNascimento(nascimento);
-  setEndereco(endereco);
-  setMatricula(matricula);
-  setCargo(*_cargo);
+: Pessoa(data, entidade, cadastro) {
+  setAtributo(atributo);
 }
 
 void LogLeitura::setAtributo(std::string atributo){atributo_ = atributo; }

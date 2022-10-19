@@ -50,8 +50,7 @@ void Funcionario::setDepartamento(Departamento &departamento) {
 }
 
 void Funcionario::addSalario(const double salario) {
-  Data aux;
-  Dinheiro novo(salario, aux.dateNow());
+  Dinheiro novo(salario, Data::dateNow());
   _registro_salario.push_back(novo);
 }
 
