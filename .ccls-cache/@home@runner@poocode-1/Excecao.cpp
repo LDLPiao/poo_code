@@ -12,7 +12,7 @@ std::string Excecao::getMensagem() const{
 }
 LogAcessoNegado Excecao::criaLogExcecao(Data data, std::string entidade , Cadastro* cadastro_, Excecao excecao){
 
-LogAcessoNegado x (data, entidade, cadastro, excecao.getMensagem();
+LogAcessoNegado x (data, entidade, cadastro_, excecao.getMensagem());
   return x;
   
 }

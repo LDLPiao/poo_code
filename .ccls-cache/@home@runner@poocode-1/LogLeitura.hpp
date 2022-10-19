@@ -5,7 +5,7 @@
 #include <string.h>
 #include "Log.hpp"
 
-class logLeitura: public Log {
+class LogLeitura: public Log {
  private:
   /**
    * @brief Booleando que mostra se o cliente é PJ ou PF
