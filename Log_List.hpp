@@ -6,12 +6,12 @@
 
 /**
  * @brief Singleton que garante que existe apenas uma lista de Log's
+ * @author @Lucas-Emanuel
+ * @example LogLeitura a("Parâmetros");
+ *          Log_List::getInstance().addLog(&a);
  */
 class Log_List{
  private:
-  /**
-   * @brief Variável que guarda se já existe uma instância de usuário.
-   *///static Log_List _instance;
 
   /**
    * @brief Set de permissões que o usuário logado possui.
@@ -35,6 +35,6 @@ class Log_List{
 
   /**
    * @brief Função que adiciona Log à Log_List.
-   */void addLog(const Log* log){_lista.push_back(log);}
+   */void addLog(Log* log){_lista.push_back(log);}
 };
 #endif

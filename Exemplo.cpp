@@ -4,5 +4,6 @@
 
 void make_log()
 {
-    Log_List::getInstance().addLog(&LogLeitura("Parâmetros"));
+    LogLeitura a("Parâmetros");
+    Log_List::getInstance().addLog(&a);
 }
