@@ -2,12 +2,13 @@
 #define EXCECAO_H
 
 #include <string.h>
-#include "LogAcessoNegado"
+#include "LogAcessoNegado.hpp"
 #include "Log.hpp"
 #include "Cadastro.hpp"
 #include "Data.h"
 #include <iostream>
-
+#include "Log_List.hpp"
+#include "LogLeitura.hpp"
 
 
 class Excecao {
@@ -38,7 +39,7 @@ public:
 /**
    * @brief Cria e retorna um log do tipo acesso negado
    */
-  LogAcessoNegado criaLogExcecao(Data data, std::string entidade, Cadastro* cadastro_, std::string funcionalidade);
+  void criaLogExcecao(Data data, std::string entidade, Cadastro* cadastro_,);
   
 };
 #endif
