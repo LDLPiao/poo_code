@@ -28,5 +28,7 @@ class LogLeitura: public Log {
    */
   void setAtributo(std::string atributo);
 
+   string printLog();
+
 };
 #endif

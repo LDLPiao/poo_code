@@ -19,6 +19,10 @@ public:
 
   LogAcessoNegado(Data data, std::string entidade, Cadastro* cadastro_, std::string funcionalidade);
 
+/**
+   * @brief Imprime o log
+  */
+  string printLog();
 
 };
 

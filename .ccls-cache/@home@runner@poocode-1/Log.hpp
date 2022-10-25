@@ -48,7 +48,7 @@ public:
   /**
    * @brief print do log
    */
-   virtual void printLog();
+   virtual string printLog();
 };
 
 #endif

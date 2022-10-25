@@ -32,7 +32,7 @@ class Cliente: public Pessoa {
           const int telefone,
           bool tipo = 0);
 
-  Cliente(){};
+  Cliente();
 
   /**
    * @brief Atribui um valor à _tipo.

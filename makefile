@@ -1,14 +1,15 @@
-SRC_DIR := ./src
-OBJ_DIR := ./obj
-SRC_FILES := $(wildcard $(SRC_DIR)/*.cpp)
-OBJ_FILES = $(patsubst src/%.cpp,obj/%.o,$(CPP_FILES))
-CXXFLAGS := -std=c++17 -Wall
+all: main
 
-main: $(BIN_FILES)
-	g++ -o $@ $^
+CXX = clang++
+override CXXFLAGS += -g -Wno-everything
 
-$(BIN_DIR)/%.o: $(SRC_DIR)/%.cpp
-	g++ $(CXXFLAGS) -c $^
+SRCS = $(shell find . -name '.ccls-cache' -type d -prune -o -type f -name '*.cpp' -print | sed -e 's/ /\\ /g')
 
-CXXFLAGS += -MMD
--include $(OBJ_FILES:.o=.d)
+main: $(SRCS)
+	$(CXX) $(CXXFLAGS) $(SRCS) -o "$@"
+
+main-debug: $(SRCS)
+	$(CXX) $(CXXFLAGS) -O0 $(SRCS) -o "$@"
+
+clean:
+	rm -f main main-debug
