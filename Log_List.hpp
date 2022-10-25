@@ -15,7 +15,7 @@ class Log_List{
 
   /**
    * @brief Set de permissões que o usuário logado possui.
-   */std::list<Log*> _lista;
+   */std::list<Log> _lista;
 
   /**
    * @brief Construtor da classe.
@@ -35,6 +35,6 @@ class Log_List{
 
   /**
    * @brief Função que adiciona Log à Log_List.
-   */void addLog(Log* log){_lista.push_back(log);}
+   */void addLog(const Log& log){_lista.push_back(log);}
 };
 #endif
