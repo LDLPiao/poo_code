@@ -39,7 +39,6 @@ public:
 /**
    * @brief Cria e retorna um log do tipo acesso negado
    */
-  void criaLogExcecao(Data data, std::string entidade, Cadastro* cadastro_,);
-  
+  void criaLogExcecao(Data data, std::string entidade, Cadastro* cadastro_);
 };
 #endif

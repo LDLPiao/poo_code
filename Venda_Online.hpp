@@ -2,23 +2,24 @@
 #define VENDA_ONLINE_H
 
 #include <list>
-#include "Log.hpp"
+#include <string>
+#include "Orcamento.hpp"
+#include "Produto.hpp"
 
 /**
  * @brief Singleton que garante que existe apenas uma lista de Log's
  * @author @Lucas-Emanuel
- * @example LogLeitura a("Parâmetros");
- *          Venda_Online::getInstance().addLog(&a);
+ * @example 
  */
 class Venda_Online{
  private:
   /**
    * @brief Lista que armazena todos as formas de pagamento que são aceitas.
-   */
+   */std::list<string> _tipos_de_pagamento;
 
   /**
    * @brief Lista que armazena todos os orçamentos feitos.
-   */
+   */std::list<Orcamento> _orcamentos;
 
   /**
    * @brief Construtor da classe.
@@ -37,7 +38,7 @@ class Venda_Online{
     }
 
   /**
-   * @brief Função que adiciona Log à Venda_Online.
-   */
+   * @brief Função que adiciona um  à Venda_Online.
+   */Orcamento Criar_Orcamento(std::map<Produto*, int> carrinho)
 };
 #endif

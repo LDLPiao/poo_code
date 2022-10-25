@@ -3,7 +3,7 @@
 #include <iostream>
 
 Funcionario::Funcionario(const std::string nome, const std::string email,
-                         const long int cpf, const Data nascimento,
+                         const string cpf, const Data nascimento,
                          const std::string endereco, const int matricula, const Cargo & cargo)
     : Pessoa(nome, email) {
   setCpf(cpf);

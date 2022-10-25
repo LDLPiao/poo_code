@@ -74,7 +74,7 @@ class Funcionario: public Pessoa {
    * @param endereco endereço de moradia do funcionário
    * @param matricula número de matrícula do funcionário
    */
-  Funcionario(const std::string nome, const std::string email, const long int cpf, const Data nascimento, const std::string endereco, const int matricula, const Cargo & cargo);
+  Funcionario(const std::string nome, const std::string email, const string cpf, const Data nascimento, const std::string endereco, const int matricula, const Cargo & cargo);
 
   /**
    * @brief Retorna a data de nascimento do funcionário

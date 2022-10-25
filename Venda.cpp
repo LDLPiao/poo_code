@@ -1,9 +1,10 @@
 #include "Venda.hpp"
 
-Venda::Venda(Data data, int quantidade) {
+Venda::Venda(Data data, int quantidade, Cliente &cliente) {
   data_ = data;
   qnt_ = quantidade;
   loteNum_ = 0;
+  cliente_ = &cliente;
 }
 
 void Venda::setData(Data data) {

@@ -7,9 +7,6 @@
 
 class LogLeitura: public Log {
  private:
-  /**
-   * @brief Booleando que mostra se o cliente é PJ ou PF
-   */
   std::string atributo_;
  public:
 
@@ -28,7 +25,7 @@ class LogLeitura: public Log {
    */
   void setAtributo(std::string atributo);
 
-   string printLog();
+   std::string printLog();
 
 };
 #endif

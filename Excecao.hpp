@@ -3,13 +3,10 @@
 
 #include <string.h>
 #include "LogAcessoNegado.hpp"
-#include "Log.hpp"
 #include "Cadastro.hpp"
 #include "Data.h"
 #include <iostream>
 #include "Log_List.hpp"
-#include "LogLeitura.hpp"
-
 
 class Excecao {
 private:
@@ -39,7 +36,6 @@ public:
 /**
    * @brief Cria e retorna um log do tipo acesso negado
    */
-  void criaLogExcecao(Data data, std::string entidade, Cadastro* cadastro_,);
-  
+  void criaLogExcecao(Data data, std::string entidade, Cadastro* cadastro_);
 };
 #endif

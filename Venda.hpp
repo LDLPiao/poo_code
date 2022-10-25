@@ -16,12 +16,14 @@ class Venda{
   Data data_;
   int qnt_;
   int loteNum_;
+  Cliente* cliente_;
+
  public:
   /**
    * @brief Construtor da classe.
    */
 
-  Venda(Data data, int quantidade);
+  Venda(Data data, int quantidade, Cliente &cliente);
 
   /**
    * @brief Atribui um valor à _data.
@@ -34,10 +36,10 @@ class Venda{
    * @brief Retorna o valor contido em _data.
    */
   Data getData();
-
-  /**
+/**
    * @brief Retorna o valor contido em qnt_.
    */
+  
   Data getQnt();
 
   /**
@@ -64,12 +66,7 @@ class Venda{
   /**
    * @brief Retorna o valor atual do lote de produção.
    */
-  Data getLoteNum();
-
-  /**
-   * @brief Ponteiro para o produto de Cliente
-   */
-  Cliente* cliente_;
+  Data getLoteNum(); 
 
   /**
    * @brief Retorna o ponteiro de Cliente
