@@ -19,16 +19,10 @@ public:
 
   LogAcessoNegado(Data data, std::string entidade, Cadastro* cadastro_, std::string funcionalidade);
 
-  /**
-   * @brief Atribui um valor a Funcionalidadwe.
-   */
-  void setFuncionalidade(std::string funcionalidade);
-
-  /**
-   * @brief Retorna o valor contido em Funcionalidade.
-   * 
-   */
-  std::string getFuncionalidade();
+/**
+   * @brief Imprime o log
+  */
+  string printLog();
 
 };
 

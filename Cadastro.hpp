@@ -21,5 +21,5 @@ class Cadastro{
    * @brief retorna a lista de grupos _grupos
    */
   std::list<Grupos*> getGrupos();
-}
+};
 #endif

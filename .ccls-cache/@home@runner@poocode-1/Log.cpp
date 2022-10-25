@@ -26,7 +26,5 @@ Cadastro* Log::getCadastro() {
     return cadastro_;
 }
 
-
-
 void Log::setCadastro(Cadastro &cadastro) { cadastro_ = &cadastro; }
 
