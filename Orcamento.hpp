@@ -36,6 +36,11 @@ class Orcamento{
    */
   Cliente* _cliente;
 
+/**
+   * @brief Lista de pedidos
+   */
+  std::list<PedidoCompra> _lista_pedidos;
+
  public:
 
   /**
@@ -73,14 +78,15 @@ class Orcamento{
   Cliente* getCliente() const;
 
   
-
+/**
+   * @brief Adiciona o produto e sua quantidade ao orçamento
+   */
 void addProduto(Produto &produto, int quantidade);
   
 /**
-   * @brief Criar um pedido de compra e armazena dentro do orçamento
+   * @brief Criar um pedido de compra e armazena-lo dentro da lista de pedidos do orcamento
    */
-void addPedido();
-
+void addPedido(Data data, std::map<Produto*, int> carrinho,Pagamento *_pagamento,Cliente &cliente);
 
 
 };
