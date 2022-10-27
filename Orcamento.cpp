@@ -25,7 +25,7 @@ void Orcamento::setValorTotal(){
 
 for (it = _carrinho.begin(); it != _carrinho.end(); it++)
 {
-    _valor_total += (it->first.getValor()*it->second);
+    _valor_total += (it->first.getValor()*it->second); //adicionar getValor em produto
 }
   
 }
@@ -33,4 +33,19 @@ for (it = _carrinho.begin(); it != _carrinho.end(); it++)
 double Orcamento::getValorTotal(){
 
 return _valor_total;  
+}
+
+void Orcamento::addProduto(Produto &produto, int quantidade){
+
+  _carrinho.insert({&produto,quantidade});
+  
+}
+void Orcamento::addPedido(Data data, std::map<Produto*, int> carrinho, Pagamento *_pagamento, Cliente &cliente){
+
+  Orcamento x(data, carrinho , cliente);
+
+  PedidoCompra a(x, _pagamento, data);
+
+  _lista_pedidos.push_back(a);
+  
 }

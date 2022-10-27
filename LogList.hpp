@@ -1,5 +1,5 @@
-#ifndef USUARIO_H
-#define USUARIO_H
+#ifndef LOG_LIST_H
+#define LOG_LIST_H
 
 #include <list>
 #include "Log.hpp"

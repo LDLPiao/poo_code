@@ -23,7 +23,7 @@ class Venda{
    * @brief Construtor da classe.
    */
 
-  Venda(Data data, int quantidade);
+  Venda(Data data, int quantidade, Cliente &cliente);
 
   /**
    * @brief Atribui um valor à _data.
