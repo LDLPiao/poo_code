@@ -13,9 +13,6 @@
  */
 class Usuario{
  private:
-  /**
-   * @brief Variável que guarda se já existe uma instância de usuário.
-   */static Usuario* _instance;
 
   /**
    * @brief Set de permissões que o usuário logado possui.
@@ -23,18 +20,22 @@ class Usuario{
 
   /**
    * @brief Construtor da classe.
-   */Usuario();
+   */Usuario(){}
 
  public:
 
   /**
    * @brief Função que retorna ou gera uma instância de Usuario.
-   */static Usuario* getInstance();
+   */static Usuario& getInstance()
+    {
+        static Usuario _instance;
+        return _instance;
+    }
 
   /**
    * @brief Função que retorna ou gera uma instância de Usuario.
    * @param Grupos_de_permissão, list que contem os nomes de todos os grupos no qual o usuario pertence.
-   */static  Usuario* Login(Cadastro*);
+   */void Login(Cadastro*);
 
   /**
    * @brief Função que retorna se o usuário possui uma permissão específica.

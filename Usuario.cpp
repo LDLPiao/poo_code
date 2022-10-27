@@ -1,28 +1,10 @@
 #include "Usuario.hpp"
 
 
-Usuario::Usuario(){};
-
-Usuario* Usuario::_instance = nullptr;
-
-Usuario* Usuario::Login(Cadastro* infos)
+void Usuario::Login(Cadastro* infos)
 {
-    if(_instance == nullptr)
-    {
-        _instance = new Usuario();
-    }
-    _instance->limpaPermissao();
-    _instance->carregaPermissao(infos->getGrupos());
-    return _instance;
-}
-
-Usuario* Usuario::getInstance()
-{
-    if(_instance == nullptr)
-    {
-        _instance = new Usuario();
-    }
-    return _instance;
+    Usuario::getInstance().limpaPermissao();
+    Usuario::getInstance().carregaPermissao(infos->getGrupos());
 }
 
 bool Usuario::checkPermissao(std::string permissao)

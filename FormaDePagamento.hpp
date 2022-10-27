@@ -3,6 +3,7 @@
 
 #include <string>
 #include <list>
+#include "Excecao.hpp"
 
 class FormaDePagamento {
   private:
@@ -13,18 +14,32 @@ class FormaDePagamento {
 
     /**
      * @brief Lista que armazena todos as formas de pagamento que são aceitas.
-     */static std::list<string> _tipos_de_pagamento;
+     */static std::list<std::string> _tipos_de_pagamento;
 
   public:
 
     /**
      * @brief Construtor da classe.
      */FormaDePagamento(std::string tipo)
+    {
+      for (std::list<std::string>::iterator it = _tipos_de_pagamento.begin(); it != _tipos_de_pagamento.end(); ++it)
       {
-        for (std::list<std::string>::iterator it = _tipos_de_pagamento.begin(); it != _tipos_de_pagamento.end(); ++it)
-        {
-          if(_tipo.strcompare(*it));
-        }
+        if(tipo.compare((*it)) == 0) this->_tipo = tipo;
       }
+      if(tipo.compare(_tipo) != 0)
+      {
+        Excecao ex("Forma de pagamento não encontrada", "FormaDePagamento, Construtor");
+        throw ex;
+      }
+    }
+
+    /**
+     * @brief Construtor defaut.
+     */FormaDePagamento(){}
+
+    /**
+     * @brief Função que adiciona um tipo válido de pagamento.
+     * @example FormaDePagamento::addTipo("Dinheiro");
+     */static void addTipo(std::string tipo){ _tipos_de_pagamento.push_back(tipo);}
 };
 #endif

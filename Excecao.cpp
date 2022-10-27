@@ -3,6 +3,10 @@
 Excecao::Excecao(std::string mensagem){
   mensagem_ = mensagem;
 }
+Excecao::Excecao(std::string mensagem, std::string emissor){
+  mensagem_ = mensagem;
+  emissor_ = emissor;
+}
 std::string Excecao::setMensagem(std::string mensagem){
   this->mensagem_ = mensagem;
 }
