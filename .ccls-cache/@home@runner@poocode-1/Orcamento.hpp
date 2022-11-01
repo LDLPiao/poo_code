@@ -4,11 +4,7 @@
 #include <iostream>
 #include <string.h>
 #include "Data.h"
-#include "Produto.hpp"
-#include <map>
-#include "PedidoCompra.hpp"
-#include "Cliente.hpp"
-class Produto;
+
 
 
 /**
@@ -17,36 +13,13 @@ class Produto;
  */
 class Orcamento{
  private:
-  /**
-   * @brief Valor total do orçamento
-   */double _valor_total;
-  
-  /**
-   * @brief Código do produto
-   */
-  Data _data;
-    
-  /**
-   * @brief Código do produto
-   */
-  std::map<Produto*, int> _carrinho;
-  
-  /**
-   * @brief Ponteiro para o Cliente
-   */
-  Cliente* _cliente;
 
-/**
-   * @brief Lista de pedidos
-   */
-  std::list<PedidoCompra> _lista_pedidos;
+  Data _data;
 
  public:
 
-  /**
-   * @brief Construtor da classe.
-   */
-  Orcamento(Data data, std::map<Produto*, int> carrinho, Cliente &cliente);
+ 
+  Orcamento(Data data);
 
   /**
    * @brief Retorna o valor contido em _data.
@@ -60,34 +33,7 @@ class Orcamento{
    */
   void setData(Data data);
 
-  /**
-   * @brief Retorna o valor contido em _valor_total.
-   */
-  double getValorTotal();
-  
-  /**
-   * @brief Retorna o valor contido em _valor_total.
-   */
-  void setValorTotal();
-  
-  
 
-  /**
-   * @brief Retorna o ponteiro de Cliente
-   */
-  Cliente* getCliente() const;
-
-  
-/**
-   * @brief Adiciona o produto e sua quantidade ao orçamento
-   */
-void addProduto(Produto &produto, int quantidade);
-  
-/**
-   * @brief Criar um pedido de compra e armazena-lo dentro da lista de pedidos do orcamento
-   */
-void addPedido(Data data, std::map<Produto*, int> carrinho,Pagamento *_pagamento,Cliente &cliente);
-
-
+  void addPedido();
 };
 #endif

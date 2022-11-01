@@ -3,18 +3,16 @@
 
 #include <string.h>
 #include "LogAcessoNegado.hpp"
-#include "Log.hpp"
 #include "Cadastro.hpp"
 #include "Data.h"
 #include <iostream>
 #include "Log_List.hpp"
-#include "LogLeitura.hpp"
-
 
 class Excecao {
 private:
 
   std::string mensagem_;
+  std::string emissor_;
 
 public:
  /**
@@ -22,6 +20,7 @@ public:
    *
    * @param Mensagem de excecao
    */
+  Excecao(std::string mensagem, std::string emissor);
   Excecao(std::string mensagem);
 
 
@@ -30,6 +29,13 @@ public:
    */
 
   std::string setMensagem(std::string mensagem);
+
+/**
+   * @brief Inicializa o emissor da excecao
+   */
+
+  std::string setEmissor(std::string emissor){emissor_ = emissor;}
+
 /**
    * @brief Retorna a mensagem da excecao
    */

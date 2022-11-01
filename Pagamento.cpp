@@ -1,15 +1,7 @@
 #include "Pagamento.hpp"
 
-Pagamento::Pagamento() {
-  data_ = nullptr;
-  tipo = nullptr;
-  parcelamento_ = 0;
-  valor_ = 0;
-}
-
-Pagamento::Pagamento(std::string tipo, int parcelamento, Data data, double valor) {
+Pagamento::Pagamento(std::string tipo, int parcelamento, Data data, double valor): tipo_(tipo) {
   data_ = data;
-  setTipo(tipo);
   parcelamento_ = parcelamento;
   valor_ = valor;
 }
@@ -30,12 +22,8 @@ int Pagamento::getParcelamento(){
   return parcelamento_;
 }
 
-void Pagamento::setTipo(std::string tipo){
-  tipo_ = tipo;
-}
-
 std::string Pagamento::getTipo(){
-  return tipo_;
+  return tipo_.getTipo();
 }
 
 void Pagamento::setValor(int valor){

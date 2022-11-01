@@ -8,7 +8,7 @@
 
 class Pagamento {
   private:
-  std::string tipo_; // Tipo de pagamento
+  FormaDePagamento tipo_; // Tipo de pagamento
   int parcelamento_;
   Data data_;
   double valor_;
@@ -18,7 +18,6 @@ class Pagamento {
    *
    * @param 
    */
-  Pagamento();
   Pagamento(std::string tipo, int parcelamento, Data data, double valor);
 
   /**
@@ -41,10 +40,6 @@ class Pagamento {
    */
   int getParcelamento();
 
-  /**
-   * @brief Atribui um valor à tipo_.
-   */
-  void setTipo(std::string tipo);
   /**
    * @brief Retorna o valor contido em tipo_.
    */

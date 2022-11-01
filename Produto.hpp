@@ -7,6 +7,8 @@
 #include "Data.h"
 #include <queue>
 #include "Dinheiro.hpp"
+#include "MateriaPrima.hpp"
+#include <list>
 
 /**
  * @brief Classe responsavel pelo armazenamento e gerenciamento das informacoes
@@ -17,6 +19,10 @@ class Produto{
   /**
    * @brief Nome do produto
    */std::string _nome;
+
+  /**
+   * @brief Lista de ponteiros de matéria prima
+   */std::list<MateriaPrima*> materiaprima_;
   
   /**
    * @brief Código do produto
@@ -73,6 +79,12 @@ class Produto{
   void addLote(int numero_lote, int quantidade);
   void setValor(Data dia, double valor);
   void Vender(int quantidade);
+  Dinheiro getDinheiro(); //adicionado depois por @gustavoauler -> importante para OrcamentoVenda
+
+
+  void addMP(MateriaPrima* a);
+  void removeMP(MateriaPrima* a);
+  std::list<MateriaPrima*> getMP();
 
 };
 #endif

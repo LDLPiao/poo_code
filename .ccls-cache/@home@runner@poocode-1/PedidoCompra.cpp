@@ -1,23 +1,23 @@
-#include "PedidoCompra.hpp"
+#include "PedidoVenda.hpp"
 
-PedidoCompra::PedidoCompra(Orcamento *_orcamento, Pagamento *_pagamento,
+PedidoVenda::PedidoVenda(Orcamento *_orcamento, Pagamento *_pagamento,
                            Data _data) {
   this->orcamento = _orcamento;
   this->pagamento = _pagamento;
   this->data = _data;
 }
 
-bool PedidoCompra::validaEstoque() {
+bool PedidoVenda::validaEstoque() {
   // TODO: Implementar o método de checagem do estoque
   return true;
 }
 
-bool PedidoCompra::validaValor() {
+bool PedidoVenda::validaValor() {
   // TODO: Implementar o método de comparação de valores
   return true;
 }
 
-bool PedidoCompra::validaPagamento() {
+bool PedidoVenda::validaPagamento() {
   // TODO: Implementar o método de validação da forma e do valor de pagamento
   return true;
 }

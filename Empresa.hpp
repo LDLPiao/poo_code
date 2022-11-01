@@ -9,6 +9,8 @@
 #include "Venda.hpp"
 #include "Departamento.hpp"
 #include "Grupos.hpp"
+#include "MateriaPrima.hpp"
+#include "Fornecedor.hpp"
 
 #include <iostream>
 #include <list>
@@ -27,6 +29,8 @@ private:
   std::list<Lote> _lotes;
   std::list<Venda> _vendas;
   std::list<Grupos> _grupos_de_permissoes;
+  std::list<MateriaPrima> materiaprima_;
+  std::list<Fornecedor> _fornecedores;
  /**
    * @brief Construtor padrao que cria a empresa
    *
@@ -57,7 +61,8 @@ public:
   std::list<Lote>* getLotes();
   std::list<Venda>* getVendas();
   std::list<Grupos>* getGrupos();
-
+  std::list<MateriaPrima>* getMP();
+  std::list<Fornecedor>* getFornecedores();
   /**
    * @brief Adiciona um funcionário pra lista de funcionarios
    *

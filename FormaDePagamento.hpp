@@ -40,6 +40,11 @@ class FormaDePagamento {
     /**
      * @brief Função que adiciona um tipo válido de pagamento.
      * @example FormaDePagamento::addTipo("Dinheiro");
+     */std::string getTipo(){ return _tipo;}
+
+    /**
+     * @brief Função que adiciona um tipo válido de pagamento.
+     * @example FormaDePagamento::addTipo("Dinheiro");
      */static void addTipo(std::string tipo){ _tipos_de_pagamento.push_back(tipo);}
 };
 #endif
