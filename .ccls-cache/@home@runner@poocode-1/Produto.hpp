@@ -49,6 +49,10 @@ class Produto{
    */int _qtd_total;
 
    /**
+   * @brief Materia prima e quanto que gasta
+   */std::map<MateriaPrima*,int> materiais_;
+
+   /**
    * @brief Quantidade de produtos por lote
    * @param First -> quantidade
    * @param Second -> lote
@@ -62,6 +66,7 @@ class Produto{
    * @brief Construtor da classe.
    */
   Produto(std::string nome,
+          std::list<MateriaPrima*> materiaprima,
           int codigo,
           double valor,
           Data dia,
@@ -69,7 +74,8 @@ class Produto{
           int lote_minimo,
           int estoque_minimo,
           int qtd = 0,
-          int lote = 0);
+          int lote = 0,
+          std::map<MateriaPrima*,int> materiais);
 
 
   /**

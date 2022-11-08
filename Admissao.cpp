@@ -1,7 +1,7 @@
 #include "Admissao.hpp"
 
 Admissao::Admissao(Data data, double salario) {
-  _data = data;
+  _data.setAMD(data);
   _salario = salario;
   }
 

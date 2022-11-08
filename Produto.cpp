@@ -7,6 +7,7 @@
 
 
 Produto::Produto(std::string nome,
+                 std::list<MateriaPrima*> materiaprima,
                  int codigo,
                  double valor,
                  Data dia,
@@ -14,12 +15,15 @@ Produto::Produto(std::string nome,
                  int lote_minimo,
                  int estoque_minimo,
                  int qtd,
-                 int lote)
+                 int lote,
+                 std::map<MateriaPrima*,int> materiais)
 : _nome(nome), _codigo(codigo), _categoria(categoria),
   _lote_min(lote_minimo), _estoque_min(estoque_minimo)
 {
     if(qtd != 0 && lote != 0) addLote(lote, qtd);
     setValor(dia, valor);
+    materiais_ = materiais;
+    materiaprima_ = materiaprima;
 }
 
 void Produto::addLote(int numero_lote, int quantidade)

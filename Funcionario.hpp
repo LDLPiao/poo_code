@@ -9,6 +9,7 @@
 
 #include <string>
 #include <list>
+#include <map>
 
 class Departamento;
 
@@ -62,6 +63,18 @@ class Funcionario: public Pessoa {
    */
   Cargo* _cargo;
 
+  /**
+   * @brief 
+   * 
+   */
+  std::pair<float,float> coordenadas_;
+
+  /**
+   * @brief 
+   * 
+   */
+  Data horario_;
+
  public:
   /**
    * @brief Construtor padrao que inicializa todas as variaveis privadas da
@@ -74,7 +87,7 @@ class Funcionario: public Pessoa {
    * @param endereco endereço de moradia do funcionário
    * @param matricula número de matrícula do funcionário
    */
-  Funcionario(const std::string nome, const std::string email, const string cpf, const Data nascimento, const std::string endereco, const int matricula, const Cargo & cargo);
+  Funcionario(const std::string nome, const std::string email, const string cpf, const Data nascimento, const std::string endereco, const int matricula, const Cargo & cargo, std::pair<float,float> coordenadas, Data horario);
 
   /**
    * @brief Retorna a data de nascimento do funcionário
@@ -171,6 +184,17 @@ class Funcionario: public Pessoa {
    * @brief Demite o funcionário
    */
   void Demitir();
+
+  /**
+   * @brief Atualiza o horario de embarque do funcionario
+   * @param Novo horario
+   */
+  void setHorario(Data horario);
+
+  /**
+   * @brief Atualiza a coordenada do funcionario
+   */
+  void setCoordenadas (std::pair<float,float> coordenadas);
 
   /**
    * @brief Promove o funcionário

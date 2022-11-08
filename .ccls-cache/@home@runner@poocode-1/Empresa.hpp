@@ -31,12 +31,13 @@ private:
   std::list<Grupos> _grupos_de_permissoes;
   std::list<MateriaPrima> materiaprima_;
   std::list<Fornecedor> _fornecedores;
+  std::pair<float,float> coordenadas_;
  /**
    * @brief Construtor padrao que cria a empresa
    *
    * @param nome nome da empresa
    */
-  Empresa();
+  Empresa(std::pair<float,float> coordenadas);
 public:
  
   

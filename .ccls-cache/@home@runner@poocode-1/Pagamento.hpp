@@ -2,6 +2,7 @@
 #define PAGAMENTO_H
 
 #include "Data.h"
+#include "FormaDePagamento.hpp"
 #include <iostream>
 #include <list>
 #include <string.h>

@@ -4,6 +4,12 @@
 #include <list>
 #include <string.h>
 
+// Métodos privados
+Empresa::Empresa(std::pair<float,float> coordenadas){
+  coordenadas_.first = coordenadas.first;
+  coordenadas_.second = coordenadas.second;
+}
+
 Empresa* Empresa::_instance = nullptr;
 
 Empresa* Empresa::getInstance(){

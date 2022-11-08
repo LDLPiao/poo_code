@@ -1,15 +1,14 @@
 #ifndef ORCAMENTOVENDA_H
 #define ORCAMENTOVENDA_H
 
-#include <iostream>
-#include <string.h>
-#include "Data.h"
-#include "Produto.hpp"
-#include <map>
-#include "PedidoVenda.hpp"
-#include "Cliente.hpp"
-#include "Orcamento.hpp"
-class Produto;
+#include <iostream> //ok
+#include <string.h> //ok
+#include "Data.h" //ok
+#include "Produto.hpp" //ok
+#include <map> //ok
+#include "PedidoVenda.hpp" //ok
+#include "Cliente.hpp" //ok
+#include "Orcamento.hpp" //ok
 
 
 /**
@@ -40,7 +39,7 @@ class OrcamentoVenda: public Orcamento{
   /**
    * @brief Construtor da classe.
    */
-  OrcamentoVenda(Data data, std::map<Produto*, int> carrinho, const Cliente& cliente);
+  OrcamentoVenda(Data data, std::map<Produto*, int> carrinho, Cliente& cliente);
 
   /**
    * @brief Retorna o valor contido em _valor_total.

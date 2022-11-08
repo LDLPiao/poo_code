@@ -4,13 +4,15 @@
 
 Funcionario::Funcionario(const std::string nome, const std::string email,
                          const string cpf, const Data nascimento,
-                         const std::string endereco, const int matricula, const Cargo & cargo)
+                         const std::string endereco, const int matricula, const Cargo & cargo, std::pair<float,float> coordenadas, Data horario)
     : Pessoa(nome, email) {
   setCpf(cpf);
   setNascimento(nascimento);
   setEndereco(endereco);
   setMatricula(matricula);
   setCargo(*_cargo);
+  setCoordenadas(coordenadas);
+  setHorario(horario);
 }
 
 Data Funcionario::getNascimento() const { return _nascimento; }
@@ -73,4 +75,14 @@ void Funcionario::Promover(const double salario, Cargo &cargo,
   addSalario(salario);
   setCargo(cargo);
   setDepartamento(departamento);
+}
+
+void Funcionario::setHorario(Data horario){
+  horario_.setHora(horario.getHora());
+  horario_.setMin(horario.getMin());
+}
+
+void Funcionario::setCoordenadas (std::pair<float,float> coordenadas){
+  coordenadas_.first = coordenadas.first;
+  coordenadas_.second = coordenadas.second;
 }

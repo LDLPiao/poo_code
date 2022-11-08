@@ -22,10 +22,6 @@ int Pagamento::getParcelamento(){
   return parcelamento_;
 }
 
-void Pagamento::setTipo(std::string tipo){
-  tipo_ = tipo;
-}
-
 std::string Pagamento::getTipo(){
   return tipo_.getTipo();
 }

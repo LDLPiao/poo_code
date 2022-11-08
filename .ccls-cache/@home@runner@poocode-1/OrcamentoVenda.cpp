@@ -1,6 +1,6 @@
 #include "OrcamentoVenda.hpp"
 
-OrcamentoVenda::OrcamentoVenda(Data data, std::map<Produto*, int> carrinho, Cliente &cliente): Orcamento(data){
+OrcamentoVenda::OrcamentoVenda(Data data, std::map<Produto*, int> carrinho,Cliente& cliente): Orcamento(data){
 
   _carrinho = carrinho;
   _cliente = &cliente;

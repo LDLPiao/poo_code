@@ -122,6 +122,7 @@ Data::Data(int valAno, int valMes, int valDia, int valHora, int valMin,
   validaData();
 }
 
+
 Data::Data(long valTicks) {
   ticks = valTicks;
   ticksToDate();
@@ -132,6 +133,15 @@ Data::Data(long valTicks) {
 Data::~Data() {}
 
 // Operadores:
+Data Data::operator=(Data &d2) {
+  setAMD(d2);
+  setHora(d2.getHora());
+  setMin(d2.getMin());
+  setSeg(d2.getSeg());
+  setTicks(d2.getTicks());
+  validaData();
+  return *this;
+}
 
 bool Data::operator==(Data &d2) {
   return ((ano == d2.ano) && (mes == d2.mes) && (dia == d2.dia) &&
@@ -234,6 +244,12 @@ void Data::setTicks(long valTicks) {
 }
 
 void Data::setFormato(Formato valFormato) { formatoData = valFormato; }
+
+void Data::setAMD(Data valData) {
+  ano = valData.getAno();
+  mes = valData.getMes();
+  dia = valData.getDia();
+}
 
 // Outros metodos:
 

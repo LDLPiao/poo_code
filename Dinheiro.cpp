@@ -5,9 +5,9 @@ Dinheiro::Dinheiro(double Dinheiro, Data data) {
   setData(data);
 }
 
-Dinheiro::Dinheiro(){}
+Dinheiro::Dinheiro() {}
 
-void Dinheiro::setData(Data data) { _data = data; }
+void Dinheiro::setData(Data data) { _data.setAMD(data); }
 Data Dinheiro::getData() const { return _data; }
 void Dinheiro::setValor(double valor) { _valor = valor; }
 double Dinheiro::getValor() const { return _valor; }
