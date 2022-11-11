@@ -91,6 +91,7 @@ public:
    * @param a ponteiro para o funcionário desejado
    */
   void admitirFuncionario(Funcionario* a, const double salario, Cargo &cargo);
+
 };
 
 #endif

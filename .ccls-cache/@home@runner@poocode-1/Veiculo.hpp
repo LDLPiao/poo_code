@@ -44,7 +44,7 @@ class Veiculo
     void removeFuncionario(Funcionario* funcionario);
     
     /**
-    *@brief Calcula e armazena os horários de embarque de cada funcionário na 
+    *@brief Calcula os horários de embarque de cada funcionário na 
     * rota do veículo
     */
     void setHorariosEmbarque();
