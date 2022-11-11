@@ -2,7 +2,7 @@
 #define FORNECEDOR_H
 
 #include "Pessoa.hpp"
-#include "MateriaPrima"
+#include "MateriaPrima.hpp"
 #include <string>
 #include <map>
 

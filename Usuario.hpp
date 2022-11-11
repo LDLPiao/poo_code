@@ -2,7 +2,7 @@
 #define USUARIO_H
 
 #include "Grupos.hpp"
-#include "Cadastro.cpp"
+#include "Cadastro.hpp"
 #include <iostream>
 #include <string.h>
 #include <set>

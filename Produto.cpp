@@ -7,16 +7,16 @@
 
 
 Produto::Produto(std::string nome,
-                 std::list<MateriaPrima*> materiaprima,
-                 int codigo,
-                 double valor,
-                 Data dia,
-                 std::string categoria,
-                 int lote_minimo,
-                 int estoque_minimo,
-                 int qtd,
-                 int lote,
-                 std::map<MateriaPrima*,int> materiais)
+                std::list<MateriaPrima*> materiaprima,
+                int codigo,
+                double valor,
+                Data dia,
+                std::string categoria,
+                int lote_minimo,
+                int estoque_minimo,
+                std::map<MateriaPrima*,int> materiais,
+                int qtd,
+                int lote)
 : _nome(nome), _codigo(codigo), _categoria(categoria),
   _lote_min(lote_minimo), _estoque_min(estoque_minimo)
 {
@@ -70,4 +70,4 @@ void Produto::removeMP(MateriaPrima* a){
   }
 }
 
-std::list<MateriaPrima*> Produto::getMP({ return materiaprima_; }
+std::list<MateriaPrima*> Produto::getMP(){ return materiaprima_; }

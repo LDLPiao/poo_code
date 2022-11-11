@@ -15,7 +15,7 @@ public:
    *
    * @param nome nome do grupo
    */
-  Grupos(std::string nome);
+  Grupos(std::string nome, std::list<std::string> permissoes);
 
   /**
    * @brief Adiciona uma permissão à lista de permissões do grupo

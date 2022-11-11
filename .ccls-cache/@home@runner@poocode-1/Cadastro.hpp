@@ -17,9 +17,12 @@ class Cadastro{
   std::list<Grupos*> _grupos;
 
  public:
+
+  Cadastro(std::list<Grupos*> grupos): _grupos(grupos){}
+
   /**
    * @brief retorna a lista de grupos _grupos
    */
-  std::list<Grupos*> getGrupos();
+  std::list<Grupos*> getGrupos(){return _grupos;}
 };
 #endif

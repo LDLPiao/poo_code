@@ -11,6 +11,8 @@
 #include "Grupos.hpp"
 #include "MateriaPrima.hpp"
 #include "Fornecedor.hpp"
+#include "Cadastro.hpp"
+#include "ExcecaoPadrao.hpp"
 
 #include <iostream>
 #include <list>
@@ -31,6 +33,7 @@ private:
   std::list<Grupos> _grupos_de_permissoes;
   std::list<MateriaPrima> materiaprima_;
   std::list<Fornecedor> _fornecedores;
+  std::list<Cadastro> _cadastros;
   std::pair<float,float> coordenadas_;
  /**
    * @brief Construtor padrao que cria a empresa
@@ -92,6 +95,66 @@ public:
    */
   void admitirFuncionario(Funcionario* a, const double salario, Cargo &cargo);
 
+  /**
+   * @brief Cadastro de usuario.
+   *
+   * @param lista de grupos de permissão que o usuario possui acesso
+   */void cadastrarUsuario(std::string ID, std::string senha, std::list<std::string> permissoes)
+    {
+      std::list<Grupos*> gp_permissoes;
+      
+      for (std::list<int>::iterator it = permissoes.begin(); it != permissoes.end(); ++it)
+      {
+        try
+        {
+          gp_permissoes.pushback(procurarGrupo(*it));  //procura o grupo cujo o nome pertence a permissoes
+        }
+        catch(const std::exception& E)  //caso o grupo não exista
+        {
+          std::cout << E << std::endl;
+          continue; //pula para a próxima iteração
+        }
+      }
+      this->_cadastros.pushback(ID, senha, gp_permissoes);
+    }
+
+  /**
+   * @brief Função que procura um usuário na lista de cadastros.
+   *
+   * @param identificadação e senha.
+   * @return o ponteiro para o cadastro do usuário.
+   */Cadastro* loginUsuario(std::string ID, std::string senha)
+    {
+      for (std::list<int>::iterator it = _cadastros.begin(); it != _cadastros.end(); ++it)
+      {
+        if(*(*it).getID() != ID) continue;  //pula para a proxima iteração sempre que o ID é diferente de .getID()
+        if(*(*it).getsenha() == senha) return *it;
+          else throw ExcecaoPadrao("Senha incorreta","Empresa.loginUsuario");
+      }
+      throw ExcecaoPadrao("Usuario não encontrado","Empresa.loginUsuario");
+    }
+
+  /**
+   * @brief Cadastro de grupos de permissão.
+   *
+   * @param lista de grupos de permissão que o usuario possui acesso
+   */void cadastrarGrupo(std::string nome, std::list<std::string> permissoes)
+    {
+      this->_grupos_de_permissoes.pushback(nome, permissoes);
+    }
+
+  /**
+   * @brief Cadastro de grupos de permissão.
+   *
+   * @param lista de grupos de permissão que o usuario possui acesso
+   */Grupo* procurarGrupo(std::string nome)
+    {
+      for (std::list<int>::iterator it = _grupos_de_permissoes.begin(); it != _grupos_de_permissoes.end(); ++it)
+      {
+        if((*it).getNomeGrupo() == nome) return *it;
+      }
+      throw ExcecaoPadrao("Grupo não encontrado","Empresa.procurarGrupo");
+    }
 };
 
 #endif

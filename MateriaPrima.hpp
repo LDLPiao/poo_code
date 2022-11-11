@@ -5,6 +5,7 @@
 #include <string.h>
 #include <map>
 #include <queue>
+#include "Data.h"
 
 /**
  * @brief Classe responsavel pelo armazenamento e gerenciamento das informacoes

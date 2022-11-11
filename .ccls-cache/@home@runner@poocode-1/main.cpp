@@ -1,7 +1,6 @@
 #include <iostream>
 #include "Empresa.hpp"
 #include "Usuario.hpp"
-#include "Cadastro.hpp"
 
 int main() {
 //◦Instanciar um objeto da classe Empresa.
@@ -11,6 +10,9 @@ int main() {
 // permissão de acesso à todas as funcionalidades, exceto ao
 // método que realiza a exclusão de um funcionário.
   
+  //- Criação de um grupo de permissão.
+  //- Criação do cadastro de um usuário.
+  //- Realizar o login do usuário.
   Usuario* usuario = &Usuario::getInstance();
   
 // ◦Comprovar o funcionamento do singleton do usuário logado.

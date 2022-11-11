@@ -4,9 +4,7 @@
 #include <list>
 #include <string.h>
 
-Grupos::Grupos(std::string nome){
-  nome_ = nome;
-}
+Grupos::Grupos(std::string nome, std::list<std::string> permissoes): nome_(nome), permissoes_(permissoes){}
 
 void Grupos::addPermissao(std::string a){
   permissoes_.push_back(a);

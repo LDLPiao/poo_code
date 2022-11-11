@@ -11,6 +11,7 @@
 #include "Grupos.hpp"
 #include "MateriaPrima.hpp"
 #include "Fornecedor.hpp"
+#include "Cadastro.hpp"
 
 #include <iostream>
 #include <list>
@@ -31,6 +32,7 @@ private:
   std::list<Grupos> _grupos_de_permissoes;
   std::list<MateriaPrima> materiaprima_;
   std::list<Fornecedor> _fornecedores;
+  std::list<Cadastro> _cadastros;
   std::pair<float,float> coordenadas_;
  /**
    * @brief Construtor padrao que cria a empresa
@@ -92,6 +94,30 @@ public:
    */
   void admitirFuncionario(Funcionario* a, const double salario, Cargo &cargo);
 
+  /**
+   * @brief Cadastro de usuario.
+   *
+   * @param lista de grupos de permissão que o usuario possui acesso
+   */void cadastrarUsuario(std::string ID, std::string senha, std::list<std::string> permissoes);
+
+  /**
+   * @brief Função que procura um usuário na lista de cadastros.
+   *
+   * @param identificadação e senha.
+   * @return o ponteiro para o cadastro do usuário.
+   */Cadastro* loginUsuario(std::string ID, std::string senha);
+
+  /**
+   * @brief Cadastro de grupos de permissão.
+   *
+   * @param lista de grupos de permissão que o usuario possui acesso
+   */void cadastrarGrupo(std::string nome, std::list<std::string> permissoes);
+
+  /**
+   * @brief Cadastro de grupos de permissão.
+   *
+   * @param lista de grupos de permissão que o usuario possui acesso
+   */Grupo* procurarGrupo(std::string nome);
 };
 
 #endif

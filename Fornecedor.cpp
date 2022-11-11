@@ -20,8 +20,7 @@ void Fornecedor::addMateriaPrima(MateriaPrima* materia_prima, double preco ) {
   std::map<MateriaPrima*, double>::iterator it;
 
     it = _precos.find(materia_prima);
-    it->second = preco;
-    
+    it->second = preco;    
 }
 
 
@@ -31,8 +30,6 @@ double Fornecedor::getPreco(MateriaPrima* materia_prima) const{
 
     it = _precos.find(materia_prima);
     return it->second;
-
-  
 }
  bool Fornecedor::checkMateriaPrima(MateriaPrima* materia_prima){
 
