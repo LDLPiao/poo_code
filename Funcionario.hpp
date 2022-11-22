@@ -139,6 +139,11 @@ class Funcionario: public Pessoa {
   Departamento* getDepartamento() const;
 
   /**
+   * @brief Retorna as coordenadas do funcionário
+   */
+  std::pair<float,float> getCoordenadas() const;
+
+  /**
    * @brief Atualiza o nascimento do funcionário
    * @param Novo nascimento
    */
@@ -203,6 +208,8 @@ class Funcionario: public Pessoa {
    * @param departamento novo do funcionário
    */
   void Promover(const double salario, Cargo &cargo, Departamento &departamento);
+
+
 
 };
 

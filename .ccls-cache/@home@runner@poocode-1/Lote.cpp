@@ -1,8 +1,7 @@
 #include "Lote.hpp"
 
 
-Lote::Lote(const Data& data, const long int& numero, const long int& codigo, const int& quantidade){
-    this->_data = data;
+Lote::Lote(const Data& data, const long int& numero, const long int& codigo, const int& quantidade): _data(data){
     this->_numero = numero;
     this->_codigo = codigo;
     this->_quantidade = quantidade;

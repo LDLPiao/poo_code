@@ -2,7 +2,7 @@
 #define MATERIAPRIMA_H
 
 #include <iostream>
-#include <string.h>
+#include <string>
 #include <map>
 #include <queue>
 #include "Data.h"

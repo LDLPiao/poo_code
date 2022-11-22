@@ -1,8 +1,11 @@
 #ifndef ROTA_H
 #define ROTA_H
 
+#include "Data.h"
+#include "Funcionario.hpp"
+
 #include <iostream>
-#include <string.h>
+#include <string>
 #include <list>
 
 class Rota {
@@ -17,7 +20,7 @@ class Rota {
    * @brief Construtor da classe que cria uma rota
    *
    */
-  Rota(static std::pair<float,float> coordenadas_empresa,std::list<Funcionario*> funcionarios);
+  Rota(std::pair<float,float> coordenadas_empresa,std::list<Funcionario*> funcionarios);
 
   /**
    * @brief Calcula e retorna o valor da distancia total da rota

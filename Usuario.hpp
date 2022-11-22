@@ -4,7 +4,7 @@
 #include "Grupos.hpp"
 #include "Cadastro.hpp"
 #include <iostream>
-#include <string.h>
+#include <string>
 #include <set>
 #include <list>
 

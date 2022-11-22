@@ -1,7 +1,7 @@
 #include "Departamento.hpp"
 #include <iostream>
 #include <list>
-#include <string.h>
+#include <string>
 
 Departamento::Departamento(std::string nome){
   nome_ = nome;

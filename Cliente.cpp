@@ -1,5 +1,5 @@
 #include "Cliente.hpp"
-#include <string.h>
+#include <string>
 #include <iostream>
 
 Cliente::Cliente(std::string nome,

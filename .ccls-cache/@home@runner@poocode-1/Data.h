@@ -33,7 +33,7 @@ public:
     Data(int valAno, int valMes, int valDia, int valHora=0, int valMin=0, int valSeg=0);      //Construtor com argumentos e formato default
     Data(long valTicks);        //Construtor a partir de ticks
     virtual ~Data();        //Destrutor
-    Data operator=(Data &d2);        //Sobrecarga do operador de atribuiçao eq
+    void setData(Data &d2);        //Sobrecarga do operador de atribuiçao eq
     bool operator==(Data &d2);       //Sobrecarga do operador de comparacao eq
     bool operator<(Data &d2);        //Sobrecarga do operador de comparacao lt
     bool operator>(Data &d2);        //Sobrecarga do operator de comparacao gt

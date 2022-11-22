@@ -1,7 +1,9 @@
 #include "PedidoVenda.hpp"
 
 PedidoVenda::PedidoVenda(std::list<Pagamento> pagamento,Data data) {
-  this->_pagamento = pagamento;
+  //this->_pagamento = pagamento;
+  std::copy(pagamento.begin(), pagamento.end(),
+          std::back_insert_iterator<std::list<Pagamento>>(_pagamento));
   this->_data = data;
 }
 

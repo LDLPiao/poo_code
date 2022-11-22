@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Empresa.hpp"
 #include "Usuario.hpp"
+#include "ExcecaoPadrao.hpp"
 
 int main() {
 //◦Instanciar um objeto da classe Empresa.
@@ -9,11 +10,35 @@ int main() {
 // ◦Instanciar um objeto de um usuário logado que deverá ter
 // permissão de acesso à todas as funcionalidades, exceto ao
 // método que realiza a exclusão de um funcionário.
-  
+  std::list<std::string> permissoes;
+  permissoes.push_back("Cadastrar-funcionário");
+  permissoes.push_back("Cadastrar-fornecedor");
+  permissoes.push_back("Cadastrar-produto");
   //- Criação de um grupo de permissão.
+  //                       |nome|     |permissoes|
+  empresa->cadastrarGrupo("Gerente", permissoes);
+  
+  permissoes.clear();
+  permissoes.push_back("Gerar-orçamento");
+  permissoes.push_back("Cadastrar-cliente");
+  permissoes.push_back("Vender");
+  empresa->cadastrarGrupo("Vendedor", permissoes);
+    
   //- Criação do cadastro de um usuário.
+  //                          |ID|    |senha|    |grupos|
+  std::string grupos[] = {"Gerente", "Vendedor"};
+  empresa->cadastrarUsuario("fulano", "12345", std::list<std::string>(std::begin(grupos), std::end(grupos)));
+  
   //- Realizar o login do usuário.
-  Usuario* usuario = &Usuario::getInstance();
+  //
+  try
+  {
+    Usuario::getInstance().Login(empresa->loginUsuario("fulano", "12345"));
+  }
+  catch(ExcecaoPadrao E)
+  {
+    std::cout << E << std::endl;
+  }
   
 // ◦Comprovar o funcionamento do singleton do usuário logado.
 // ◦Cadastrar três funcionários.

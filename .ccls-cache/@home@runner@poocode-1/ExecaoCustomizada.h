@@ -1,7 +1,7 @@
 #ifndef EXECAOCUSTOMIZADA_H_INCLUDED
 #define EXECAOCUSTOMIZADA_H_INCLUDED
 #include <exception>
-#include <string.h>
+#include <string>
 #include <fstream>
 #include <stdexcept>
 

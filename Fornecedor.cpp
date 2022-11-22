@@ -1,4 +1,4 @@
-#include "Fornecedor.hpp""
+#include "Fornecedor.hpp"
 
 #include <iostream>
 
@@ -24,7 +24,7 @@ void Fornecedor::addMateriaPrima(MateriaPrima* materia_prima, double preco ) {
 }
 
 
-double Fornecedor::getPreco(MateriaPrima* materia_prima) const{
+double Fornecedor::getPreco(MateriaPrima* materia_prima) {
 
   std::map<MateriaPrima*, double>::iterator it;
 

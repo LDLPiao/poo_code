@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string.h>
 #include "Log.hpp"
+#include <string>
 
 class LogLeitura: public Log {
  private:

@@ -42,5 +42,11 @@ class FormaDePagamento {
      * @brief Função que adiciona um tipo válido de pagamento.
      * @example FormaDePagamento::addTipo("Dinheiro");
      */static void addTipo(std::string tipo){ _tipos_de_pagamento.push_back(tipo);}
+
+    // OPERADORES
+    FormaDePagamento operator=(FormaDePagamento &f2){
+      _tipo = f2.getTipo();
+      return *this;
+    }
 };
 #endif

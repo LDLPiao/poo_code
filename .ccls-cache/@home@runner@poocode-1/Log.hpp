@@ -5,7 +5,7 @@
 #include "Data.h"
 #include <iostream>
 #include <list>
-#include <string.h>
+#include <string>
 
 class Log {
 private:

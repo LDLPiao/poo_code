@@ -8,6 +8,7 @@
 #include <iostream>
 #include <list>
 #include <string.h>
+#include <string>
 
 class LogAcessoNegado: public Log {
 private:

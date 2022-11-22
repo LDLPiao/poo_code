@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <list>
-#include <string.h>
+#include <string>
 
 // Métodos privados
 Empresa::Empresa(std::pair<float,float> coordenadas){
@@ -15,7 +15,7 @@ Empresa* Empresa::_instance = nullptr;
 Empresa* Empresa::getInstance(){
     if(_instance == nullptr)
     {
-        _instance = new Empresa();
+        _instance = new Empresa(make_pair(0, 0));
     }
     return _instance;
 }

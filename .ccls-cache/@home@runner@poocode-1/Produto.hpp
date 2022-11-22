@@ -2,7 +2,7 @@
 #define PRODUTO_H
 
 #include <iostream>
-#include <string.h>
+#include <string>
 #include <map>
 #include "Data.h"
 #include <queue>
@@ -73,9 +73,9 @@ class Produto{
           std::string categoria,
           int lote_minimo,
           int estoque_minimo,
+          std::map<MateriaPrima*,int> materiais,
           int qtd = 0,
-          int lote = 0,
-          std::map<MateriaPrima*,int> materiais);
+          int lote = 0);
 
 
   /**

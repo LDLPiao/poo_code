@@ -2,9 +2,8 @@
 #define ORCAMENTO_H
 
 #include <iostream>
-#include <string.h>
+#include <string>
 #include "Data.h"
-
 
 
 /**
@@ -13,11 +12,9 @@
  */
 class Orcamento{
  private:
-
   Data _data;
 
  public:
-
  
   Orcamento(Data data);
 

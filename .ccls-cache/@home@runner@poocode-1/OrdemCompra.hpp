@@ -21,7 +21,7 @@ class OrdemCompra: public Ordem{
   /**
    * @brief Construtor da classe.
    */
-  OrdemCompra(int codigo, int codigoMP. int quantidade);
+  OrdemCompra(int codigo, int codigoMP, int quantidade);
 
   void solicitarOrcamento();
 

@@ -4,7 +4,7 @@
 #include "Funcionario.hpp"
 #include <iostream>
 #include <list>
-#include <string.h>
+#include <string>
 class Cargo;
 class Funcionario;
 

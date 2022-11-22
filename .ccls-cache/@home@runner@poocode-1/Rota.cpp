@@ -1,23 +1,35 @@
 #include "Rota.hpp"
+#include <iterator>
+#include <cmath>
 
-Rota::Rota(float tempo_total, float distancia_total, static std::pair<float,float> coordenadas_empresa){
+Rota::Rota(std::pair<float,float> coordenadas_empresa, std::list<Funcionario*> _funcionarios){
 
+    this->_funcionarios = _funcionarios;
+    this->_coordenadas_empresa = coordenadas_empresa;
+    this->_distancia_total = CalculaDistancia(_funcionarios, coordenadas_empresa);
+    this->_tempo_total = CalculaTempo(_distancia_total, 18);
    
  }
 
 
-float Rota::CalculaDistancia(std::list<Funcionario*> funcionarios, static std::pair<float,float> coordenadas_empresa){
+float Rota::CalculaDistancia(std::list<Funcionario*> funcionarios, std::pair<float,float> coordenadas_empresa){
 
   float distancia_total = 0;
   
   std::list<Funcionario*>::iterator it;
   
-  for (it = funcionarios.begin(); it != (funcionarios.end() - 1); ++it){
+  for (it = funcionarios.begin(); it != funcionarios.end(); ++it){
+
+    if(it == funcionarios.end()){
+  distancia_total += 110.57 * sqrt( pow(coordenadas_empresa.first -   
+  (*funcionarios.end())->getCoordenadas().first,2) + pow(coordenadas_empresa.second-    (*funcionarios.end())->getCoordenadas().second, 2) );
       
-    distancia_total += 110.57 * sqrt( pow((it+1).getCoordenadas().first - it.getCoordenadas().first,2) + pow((it+1).getCoordenadas().second-        it.getCoordenadas().second, 2) ); //calcula a distancia entre os funcionarios
-  
+    } 
+    else{
+       auto nx = std::next(it, 1);
+    distancia_total += 110.57 * sqrt( pow((*nx)->getCoordenadas().first - (*it)->getCoordenadas().first,2) + pow((*nx)->getCoordenadas().second - (*it)->getCoordenadas().second, 2)) ; //calcula a distancia entre os funcionarios
+      }
 }
-distancia_total += 110.57 * sqrt( pow(coordenadas_empresa.first - fucionarios.end().getCoordenadas().first,2) + pow(coordenadas_empresa.second-        funcionarios.end().getCoordenadas().second, 2) ); //calcula a distancia do ultimo funcionario da lista ate a empresa e acrescenta na distancia total
 
 return distancia_total;
 }
@@ -40,4 +52,6 @@ Data Rota::CalculaTempo(float distancia_total, float velocidade_media){
   
   tempo_total.setHora(tempo_hora);
   tempo_total.setMin(tempo_minuto);
+
+  return tempo_total;
 }

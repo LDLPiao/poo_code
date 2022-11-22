@@ -34,7 +34,7 @@ void OrcamentoVenda::addProduto(Produto &produto, int quantidade){
 }
 void OrcamentoVenda::addPedido(Data data, std::map<Produto*, int> carrinho, Pagamento *_pagamento, Cliente &cliente){
 
-  Orcamento x(data, carrinho , cliente);
+  OrcamentoVenda x(data, carrinho, cliente);
 
   PedidoCompra a(x, _pagamento, data);
 

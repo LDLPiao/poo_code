@@ -48,7 +48,7 @@ class Fornecedor: public Pessoa {
   /**
    * @brief Retorna o preco de uma determinada materia prima na lista
    */
-  double getPreco(MateriaPrima* materia_prima) const;
+  double getPreco(MateriaPrima* materia_prima);
 
 
   /**
@@ -58,5 +58,4 @@ class Fornecedor: public Pessoa {
 
    
 };
-
 #endif

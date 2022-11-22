@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <list>
-#include <string.h>
+#include <string>
 
 Cargo::Cargo(std::string nome){
   nome_ = nome;

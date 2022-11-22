@@ -1,7 +1,8 @@
 #ifndef ExcecaoPadrao_H
 #define ExcecaoPadrao_H
 
-#include <string.h>
+#include <string>
+#include <iostream>
 
 class ExcecaoPadrao: public std::exception{
 private:
@@ -11,15 +12,21 @@ private:
 
 public:
 
-  ExcecaoPadrao(std::string mensagem, std::string emissor);
-  ExcecaoPadrao(std::string mensagem);
+  ExcecaoPadrao(std::string mensagem, std::string emissor = "defaut"): mensagem_(mensagem), emissor_(emissor) {}
 
-/**
+  /**
    * @brief Retorna a mensagem da Excecao
    */std::string getMensagem() const noexcept {return mensagem_;}
 
-/**
+  /**
    * @brief Retorna o criador da mensagem da Excecao
    */std::string getEmissor() const noexcept {return emissor_;}
 };
+
+ostream& operator<<(ostream &Saida,const ExcecaoPadrao &E)
+{
+  std::cout << "|Excecao| -Mensagem: " << E.getMensagem() << " | -Emissor: " << E.getEmissor();
+  return Saida;
+}
+
 #endif

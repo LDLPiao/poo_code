@@ -1,7 +1,7 @@
 #ifndef ExcecaoPadrao_H
 #define ExcecaoPadrao_H
 
-#include <string.h>
+#include <string>
 #include <iostream>
 
 class ExcecaoPadrao: public std::exception{

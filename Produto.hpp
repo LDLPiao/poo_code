@@ -2,7 +2,7 @@
 #define PRODUTO_H
 
 #include <iostream>
-#include <string.h>
+#include <string>
 #include <map>
 #include "Data.h"
 #include <queue>

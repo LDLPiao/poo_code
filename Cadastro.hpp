@@ -4,7 +4,7 @@
 #include "Grupos.hpp"
 
 #include <iostream>
-#include <string.h>
+#include <string>
 /**
    * @brief Cadastros
 */

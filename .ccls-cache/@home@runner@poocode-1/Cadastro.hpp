@@ -4,7 +4,7 @@
 #include "Grupos.hpp"
 
 #include <iostream>
-#include <string.h>
+#include <string>
 /**
    * @brief Cadastros
 */
@@ -15,14 +15,18 @@ class Cadastro{
    * que está incluso
    */
   std::list<Grupos*> _grupos;
+  std::string _ID;
+  std::string _senha;
 
  public:
 
-  Cadastro(std::list<Grupos*> grupos): _grupos(grupos){}
+  Cadastro(std::string ID, std::string senha, std::list<Grupos*> grupos): _grupos(grupos), _ID(ID), _senha(senha){}
 
   /**
    * @brief retorna a lista de grupos _grupos
    */
   std::list<Grupos*> getGrupos(){return _grupos;}
+  std::string getID(){return _ID;}
+  std::string getSenha(){return _senha;}
 };
 #endif

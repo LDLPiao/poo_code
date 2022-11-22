@@ -11,9 +11,9 @@ int Veiculo::getCapacidade() { return capacidade; }
 
 float Veiculo::getVelocidade() { return velocidade; }
 
-Rota *Veiculo::getRota() { return &rota; }
+Rota* Veiculo::getRota() { return rota; }
 
-Rota *Veiculo::setRota(Rota *_rota) { this->rota = _rota; }
+void Veiculo::setRota(Rota* _rota) { this->rota = _rota; }
 
 bool Veiculo::checkCapacidade(int qtd) {
   // Recupera o tamanho da lista funcionarios

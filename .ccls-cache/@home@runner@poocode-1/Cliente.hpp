@@ -2,7 +2,7 @@
 #define CLIENTE_H
 
 #include <iostream>
-#include <string.h>
+#include <string>
 #include "Pessoa.hpp"
 
 /**

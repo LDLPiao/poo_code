@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <list>
-#include <string.h>
+#include <string>
 
 Grupos::Grupos(std::string nome, std::list<std::string> permissoes): nome_(nome), permissoes_(permissoes){}
 

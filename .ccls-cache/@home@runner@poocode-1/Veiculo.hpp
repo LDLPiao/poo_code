@@ -15,7 +15,7 @@ class Veiculo
     int capacidade;
     std::list<Funcionario*> funcionarios;
     static float velocidade;
-    Rota rota = nullptr;
+    Rota* rota = nullptr;
 
   public:
 
@@ -26,7 +26,7 @@ class Veiculo
     float getVelocidade();
     Rota* getRota();
 
-    Rota* setRota(Rota* _rota);
+    void setRota(Rota* _rota);
 
     /**
     *@brief Checa se existe vaga para mais funcionários no veículo

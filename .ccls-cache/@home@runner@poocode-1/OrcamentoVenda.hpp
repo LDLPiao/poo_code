@@ -9,6 +9,7 @@
 #include "PedidoVenda.hpp" //ok
 #include "Cliente.hpp" //ok
 #include "Orcamento.hpp" //ok
+#include <string>
 
 
 /**

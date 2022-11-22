@@ -1,10 +1,11 @@
+
 #include "Orcamento.hpp"
 
 Orcamento::Orcamento(Data data){
-  _data = data;
+  this->_data = data;
 }
 void Orcamento::setData(Data data) {
-    _data = data;
+    this->_data = data;
 }
 
 Data Orcamento::getData() {

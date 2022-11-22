@@ -35,7 +35,7 @@ Cargo *Funcionario::getCargo() const { return _cargo; }
 
 Departamento *Funcionario::getDepartamento() const { return _departamento; }
 
-void Funcionario::setNascimento(const Data nascimento) {
+void Funcionario::setNascimento(Data nascimento) {
   _nascimento = nascimento;
 }
 
@@ -86,3 +86,5 @@ void Funcionario::setCoordenadas (std::pair<float,float> coordenadas){
   coordenadas_.first = coordenadas.first;
   coordenadas_.second = coordenadas.second;
 }
+
+std::pair<float,float> Funcionario::getCoordenadas() const { return coordenadas_; }

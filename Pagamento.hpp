@@ -5,7 +5,7 @@
 #include "FormaDePagamento.hpp"
 #include <iostream>
 #include <list>
-#include <string.h>
+#include <string>
 
 class Pagamento {
   private:
