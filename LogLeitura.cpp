@@ -10,7 +10,7 @@ void LogLeitura::setAtributo(std::string atributo){atributo_ = atributo; }
 
 std::string LogLeitura::getAtributo(){return atributo_;}
 
-string LogLeitura::printLog(){
+std::string LogLeitura::printLog(){
   std::stringstream log;
   log <<  getData().getData() <<": " << getCadastro() << " leu em " << getEntidade() << " o(a) " << getAtributo();
   return log.str();

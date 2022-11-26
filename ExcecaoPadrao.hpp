@@ -2,7 +2,8 @@
 #define ExcecaoPadrao_H
 
 #include <string>
-#include <iostream>
+//#include <ostream>
+//#include <iostream>
 
 class ExcecaoPadrao: public std::exception{
 private:
@@ -21,12 +22,14 @@ public:
   /**
    * @brief Retorna o criador da mensagem da Excecao
    */std::string getEmissor() const noexcept {return emissor_;}
+
+   const char* what() const noexcept {return mensagem_.c_str();}
 };
 
-ostream& operator<<(ostream &Saida,const ExcecaoPadrao &E)
-{
-  std::cout << "|Excecao| -Mensagem: " << E.getMensagem() << " | -Emissor: " << E.getEmissor();
-  return Saida;
-}
+// inline std::ostream& operator<<(std::ostream &Saida,const ExcecaoPadrao &E)
+// {
+//   std::cout << "|Excecao| -Mensagem: " << E.getMensagem() << " | -Emissor: " << E.getEmissor();
+//   return Saida;
+// }
 
 #endif

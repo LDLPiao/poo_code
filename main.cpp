@@ -38,7 +38,7 @@ int main() {
   }
   catch(ExcecaoPadrao E)
   {
-    std::cout << E << std::endl;
+    std::cout << E.getMensagem() << std::endl;
   }
   
 // ◦Comprovar o funcionamento do singleton do usuário logado.

@@ -27,11 +27,11 @@ void Venda::setProduto(Produto &produto){
     produto_ = &produto;
 }
 
-Data Venda::setLoteNum(int num){
+void Venda::setLoteNum(int num){
   loteNum_ = num;
 }
 
-Data Venda::getLoteNum(){
+int Venda::getLoteNum(){
   return loteNum_;
 }
 

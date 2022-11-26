@@ -18,6 +18,7 @@ public:
    */
 
   Log(Data data, std::string entidade, Cadastro* &cadastro);
+  Log(){}
 
   /**
    * @brief Atribui um valor a entidade_.
@@ -48,7 +49,7 @@ public:
   /**
    * @brief print do log
    */
-   virtual string printLog();
+  //virtual std::string printLog() = 0;
 };
 
 #endif

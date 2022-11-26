@@ -61,12 +61,12 @@ class Venda{
   /**
    * @brief Atualiza o numero do lote de produção.
    */
-  Data setLoteNum(int num);
+  void setLoteNum(int num);
 
   /**
    * @brief Retorna o valor atual do lote de produção.
    */
-  Data getLoteNum(); 
+  int getLoteNum(); 
 
   /**
    * @brief Retorna o ponteiro de Cliente

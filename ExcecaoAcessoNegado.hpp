@@ -2,11 +2,8 @@
 #define ExcecaoAcessoNegado_H
 
 #include <string>
-#include "LogAcessoNegado.hpp"
 #include "Cadastro.hpp"
 #include "Data.h"
-#include <iostream>
-#include "LogList.hpp"
 
 class ExcecaoAcessoNegado: public exception{
 private:
@@ -28,13 +25,13 @@ public:
    * @brief Inicializa a mensagem da ExcecaoAcessoNegado
    */
 
-  std::string setMensagem(std::string mensagem);
+  void setMensagem(std::string mensagem);
 
 /**
    * @brief Inicializa o emissor da ExcecaoAcessoNegado
    */
 
-  std::string setEmissor(std::string emissor){emissor_ = emissor;}
+  void setEmissor(std::string emissor){emissor_ = emissor;}
 
 /**
    * @brief Retorna a mensagem da ExcecaoAcessoNegado

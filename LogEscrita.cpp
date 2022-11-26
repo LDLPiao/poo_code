@@ -8,7 +8,7 @@ LogEscrita::LogEscrita(Data data, std::string entidade, Cadastro* cadastro, std:
     _depois = depois;
   }
 
-string LogEscrita::printLog(){
+std::string LogEscrita::printLog(){
   std::stringstream log;
   log <<  getData().getData() <<": " << getCadastro() << " mudou " << getEntidade() << " de " << _antes << " para " << _depois;
   return log.str();

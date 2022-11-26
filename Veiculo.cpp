@@ -1,5 +1,7 @@
 #include "Veiculo.hpp"
 
+float Veiculo::velocidade = 18;
+
 Veiculo::Veiculo(std::string _placa, int _capacidade) {
   this->placa = _placa;
   this->capacidade = _capacidade;

@@ -111,7 +111,7 @@ public:
         }
         catch(const ExcecaoPadrao& E)  //caso o grupo não exista
         {
-          std::cout << E << std::endl;
+          std::cout << E.getMensagem() << std::endl;
           continue; //pula para a próxima iteração
         }
       }
