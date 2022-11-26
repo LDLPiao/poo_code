@@ -4,6 +4,7 @@
 #include "ExcecaoPadrao.hpp"
 
 int main() {
+*/
 //◦Instanciar um objeto da classe Empresa.
   Empresa* empresa = Empresa::getInstance();
 

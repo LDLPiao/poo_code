@@ -109,7 +109,7 @@ public:
         {
           gp_permissoes.push_back(procurarGrupo(*it));  //procura o grupo cujo o nome pertence a permissoes
         }
-        catch(const std::exception& E)  //caso o grupo não exista
+        catch(const ExcecaoPadrao& E)  //caso o grupo não exista
         {
           std::cout << E << std::endl;
           continue; //pula para a próxima iteração
@@ -156,7 +156,7 @@ public:
     {
       for (std::list<Grupos>::iterator it = _grupos_de_permissoes.begin(); it != _grupos_de_permissoes.end(); ++it)
       {
-        if(*it->getNomeGrupo() == nome){
+        if(it->getNomeGrupo() == nome){
           Grupos* Grupo;
           Grupo = &(*it);
           return Grupo;

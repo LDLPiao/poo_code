@@ -32,11 +32,11 @@ void OrcamentoVenda::addProduto(Produto &produto, int quantidade){
   _carrinho.insert({&produto,quantidade});
   
 }
-void OrcamentoVenda::addPedido(Data data, std::map<Produto*, int> carrinho, Pagamento *_pagamento, Cliente &cliente){
+void OrcamentoVenda::addPedido(Data data, std::list<Pagamento> pagamento){
 
-  OrcamentoVenda x(data, carrinho, cliente);
+  //OrcamentoVenda x(data, carrinho, cliente);
 
-  PedidoCompra a(x, _pagamento, data);
+  PedidoVenda a(pagamento, data);
 
   _lista_pedidos.push_back(a);
   

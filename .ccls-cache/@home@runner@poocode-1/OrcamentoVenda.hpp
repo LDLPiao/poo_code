@@ -61,7 +61,7 @@ class OrcamentoVenda: public Orcamento{
   
   /**
    * @brief Criar um pedido de compra e armazena-lo dentro da lista de pedidos do orcamento
-   */void addPedido(Data data, std::map<Produto*, int> carrinho,Pagamento *_pagamento,Cliente &cliente);
+   */void addPedido(Data data, std::list<Pagamento> pagamento);
 
   /**
    * @brief Retorna o ponteiro de Cliente
