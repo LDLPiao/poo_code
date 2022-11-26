@@ -67,6 +67,7 @@ public:
   std::list<Grupos>* getGrupos();
   std::list<MateriaPrima>* getMP();
   std::list<Fornecedor>* getFornecedores();
+  std::pair<float,float> getCoordenadas();
   /**
    * @brief Adiciona um funcionário pra lista de funcionarios
    *

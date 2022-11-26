@@ -67,6 +67,7 @@ public:
   std::list<Grupos>* getGrupos();
   std::list<MateriaPrima>* getMP();
   std::list<Fornecedor>* getFornecedores();
+  std::pair<float,float> getCoordenadas();
   /**
    * @brief Adiciona um funcionário pra lista de funcionarios
    *
@@ -111,7 +112,7 @@ public:
         }
         catch(const ExcecaoPadrao& E)  //caso o grupo não exista
         {
-          std::cout << E << std::endl;
+          std::cout << E.getMensagem() << std::endl;
           continue; //pula para a próxima iteração
         }
       }

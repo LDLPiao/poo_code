@@ -39,3 +39,5 @@ std::list<Grupos>* Empresa::getGrupos(){return &_grupos_de_permissoes;}
 std::list<MateriaPrima>* Empresa::getMP(){return &materiaprima_;}
 
 std::list<Fornecedor>* Empresa::getFornecedores(){return &_fornecedores;}
+
+std::pair<float,float> Empresa::getCoordenadas(){return coordenadas_;}

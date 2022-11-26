@@ -9,11 +9,11 @@ int main() {
 
 //◦Instanciar um objeto da classe Empresa.
   Empresa* empresa = Empresa::getInstance();
+  std::cout << "criada Empresa nas coordenadas" << Empresa::getInstance()->getCoordenadas().first << " " <<Empresa::getInstance()->getCoordenadas().second;
+
+
   
-
-
-
-
+    
 /*
 // ◦Instanciar um objeto de um usuário logado que deverá ter
 // permissão de acesso à todas as funcionalidades, exceto ao

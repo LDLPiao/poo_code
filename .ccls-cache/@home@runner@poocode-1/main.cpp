@@ -4,10 +4,17 @@
 #include "ExcecaoPadrao.hpp"
 
 int main() {
-/*
+
+
+
 //◦Instanciar um objeto da classe Empresa.
   Empresa* empresa = Empresa::getInstance();
+  std::cout << "criada Empresa nas coordenadas" << Empresa::getInstance()->getCoordenadas().first << " " <<Empresa::getInstance()->getCoordenadas().second;
 
+
+  
+    
+/*
 // ◦Instanciar um objeto de um usuário logado que deverá ter
 // permissão de acesso à todas as funcionalidades, exceto ao
 // método que realiza a exclusão de um funcionário.
@@ -38,7 +45,7 @@ int main() {
   }
   catch(ExcecaoPadrao E)
   {
-    std::cout << E << std::endl;
+    std::cout << E.getMensagem() << std::endl;
   }
   
 // ◦Comprovar o funcionamento do singleton do usuário logado.
