@@ -4,7 +4,7 @@
 #include "ExcecaoPadrao.hpp"
 
 int main() {
-*/
+/*
 //◦Instanciar um objeto da classe Empresa.
   Empresa* empresa = Empresa::getInstance();
 
@@ -65,4 +65,5 @@ int main() {
 // funcionário deverá embarcar.
 // ◦Por fim, deve-se exibir os logs de todas as operações realizadas.
   std::cout << "Hello World!\n";
+  */
 }

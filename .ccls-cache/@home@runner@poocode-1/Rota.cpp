@@ -28,7 +28,7 @@ float Rota::CalculaDistancia(std::list<Funcionario*> funcionarios, std::pair<flo
     else{
        auto nx = std::next(it, 1);
     distancia_total += 110.57 * sqrt( pow((*nx)->getCoordenadas().first - (*it)->getCoordenadas().first,2) + pow((*nx)->getCoordenadas().second - (*it)->getCoordenadas().second, 2)) ; //calcula a distancia entre os funcionarios
-      }
+    }
 }
 
 return distancia_total;

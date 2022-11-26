@@ -12,7 +12,7 @@ class Rota {
   private:
     Data _tempo_total;
     float _distancia_total;
-    static std::pair<float,float> _coordenadas_empresa;
+    std::pair<float,float> _coordenadas_empresa;
     std::list<Funcionario*> _funcionarios;
 
   public:
