@@ -4,10 +4,17 @@
 #include "ExcecaoPadrao.hpp"
 
 int main() {
-/*
+
+
+
 //◦Instanciar um objeto da classe Empresa.
   Empresa* empresa = Empresa::getInstance();
+  
 
+
+
+
+/*
 // ◦Instanciar um objeto de um usuário logado que deverá ter
 // permissão de acesso à todas as funcionalidades, exceto ao
 // método que realiza a exclusão de um funcionário.
