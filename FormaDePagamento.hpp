@@ -45,14 +45,17 @@ class FormaDePagamento {
      */static void addTipo(std::string tipo){ _tipos_de_pagamento.push_back(tipo);}
 
     // OPERADORES
-    FormaDePagamento operator=(std::string tipo)
+    void set2(std::string tipo)
     {
       for (std::list<std::string>::iterator it = _tipos_de_pagamento.begin(); it != _tipos_de_pagamento.end(); ++it)
       {
-        if(tipo.compare((*it)) == 0) this->_tipo = tipo;
+        if(tipo.compare((*it)) == 0)
+        {
+          this->_tipo = tipo;
+          return;
+        }
       }
-      if(tipo.compare(_tipo) != 0)throw ExcecaoPadrao {"forma de pagamento não aceita"};
-      return *this;
+      throw ExcecaoPadrao {"forma de pagamento não aceita"};
     }
 };
 #endif

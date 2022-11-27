@@ -19,7 +19,7 @@ class Pagamento {
    *
    * @param 
    */
-  Pagamento(std::string tipo, int parcelamento, Data data, double valor);
+  Pagamento(FormaDePagamento forma, int parcelamento, Data data, double valor);
 
   /**
    * @brief Atribui um valor à data_.

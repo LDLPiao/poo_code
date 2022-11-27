@@ -6,12 +6,14 @@
 #include "Admissao.hpp"
 #include "Cargo.hpp"
 #include "Dinheiro.hpp"
+#include "Departamento.hpp"
+#include "Endereco.hpp"
+
+class Veiculo;
 
 #include <string>
 #include <list>
 #include <map>
-
-class Departamento;
 
 /**
  * @brief Classe que armazena e gerencia as informacoes do funcionário.
@@ -28,7 +30,7 @@ class Funcionario: public Pessoa {
   /**
    * @brief Endereço do funcionário
    */
-  string _endereco;
+  Endereco _endereco;
 
   /**
    * @brief Número de matrícula do funcionário
@@ -67,13 +69,19 @@ class Funcionario: public Pessoa {
    * @brief 
    * 
    */
-  std::pair<float,float> coordenadas_;
+  //std::pair<float,float> coordenadas_;
 
   /**
    * @brief 
    * 
    */
   Data horario_;
+
+  /**
+   * @brief 
+   * 
+   */
+  Veiculo* _transporte;
 
  public:
   /**
@@ -87,7 +95,7 @@ class Funcionario: public Pessoa {
    * @param endereco endereço de moradia do funcionário
    * @param matricula número de matrícula do funcionário
    */
-  Funcionario(const std::string nome, const std::string email, const string cpf, const Data nascimento, const std::string endereco, const int matricula, const Cargo & cargo, std::pair<float,float> coordenadas, Data horario);
+  Funcionario(const std::string nome, const std::string email, const string cpf, const Data nascimento, Endereco endereco, const int matricula);
 
   /**
    * @brief Retorna a data de nascimento do funcionário
@@ -98,7 +106,7 @@ class Funcionario: public Pessoa {
   /**
    * @brief Retorna o endereço do funcionário
    */
-  std::string getEndereco() const;
+   Endereco getEndereco() const;
 
 
   /**
@@ -141,7 +149,13 @@ class Funcionario: public Pessoa {
   /**
    * @brief Retorna as coordenadas do funcionário
    */
-  std::pair<float,float> getCoordenadas() const;
+  // std::pair<float,float> getCoordenadas() const;
+
+  /**
+   * @brief Retorna o horario de embarque do funcionário
+   */
+  Data getHorario() const;
+
 
   /**
    * @brief Atualiza o nascimento do funcionário
@@ -153,7 +167,7 @@ class Funcionario: public Pessoa {
    * @brief Atualiza o endereço do funcionário
    * @param Novo endereço
    */
-  void setEndereco(const std::string endereco);
+  void setEndereco(Endereco endereco);
 
   /**
    * @brief Atualiza a matricula do funcionário
@@ -199,7 +213,7 @@ class Funcionario: public Pessoa {
   /**
    * @brief Atualiza a coordenada do funcionario
    */
-  void setCoordenadas (std::pair<float,float> coordenadas);
+  // void setCoordenadas (std::pair<float,float> coordenadas);
 
   /**
    * @brief Promove o funcionário
@@ -209,7 +223,8 @@ class Funcionario: public Pessoa {
    */
   void Promover(const double salario, Cargo &cargo, Departamento &departamento);
 
-
+  void setVeiculo(Veiculo* v){_transporte = v;}
+  Veiculo* getVeiculo(){return _transporte;}
 
 };
 

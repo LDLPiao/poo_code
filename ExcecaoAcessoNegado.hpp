@@ -43,5 +43,7 @@ public:
    * @brief Cria e retorna um log do tipo acesso negado
    */
   void criaLogExcecaoAcessoNegado(Data data, std::string entidade, Cadastro* cadastro_);
+
+  std::string resumo() const;
 };
 #endif

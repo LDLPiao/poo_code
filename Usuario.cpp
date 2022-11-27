@@ -3,8 +3,12 @@
 
 void Usuario::Login(Cadastro* infos)
 {
+  if(_logado == true) throw ExcecaoPadrao("Usuario ja logado","Usuario.Login");
+  else{
+    _logado = 1;
     Usuario::getInstance().limpaPermissao();
     Usuario::getInstance().carregaPermissao(infos->getGrupos());
+  }
 }
 
 bool Usuario::checkPermissao(std::string permissao)

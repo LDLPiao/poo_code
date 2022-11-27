@@ -1,13 +1,14 @@
 #include "Lote.hpp"
 
+int Lote::_ultimo_codigo = 0;
 
-Lote::Lote(const Data& data, const long int& numero, const long int& codigo, const int& quantidade): _data(data){
-    this->_numero = numero;
-    this->_codigo = codigo;
-    this->_quantidade = quantidade;
+Lote::Lote(const Data& data, const int& codigo, const int& quantidade): _data(data){
+  this->_codigo = codigo;
+  this->_quantidade = quantidade;
+  
+  _numero = _ultimo_codigo;
+  _ultimo_codigo++;
 }
-
-
 
 
 Data Lote::getData() const{

@@ -23,14 +23,12 @@ void Departamento::demitirFuncionario(Funcionario* a){
   for(auto it = funcionarios_.begin(); it != funcionarios_.end(); ++it){
     if (*it == a){ 
       funcionarios_.erase(it++);
-      a->Demitir();
     }
   }
 }
 
 void Departamento::admitirFuncionario(Funcionario* a, const double salario, Cargo &cargo){
   funcionarios_.push_back(a);
-  a->Admitir(salario, cargo, (*this));
 }
 
 std::list<Funcionario*> Departamento::getFuncionarios() { return funcionarios_; }

@@ -13,7 +13,7 @@ private:
 
 public:
 
-  ExcecaoPadrao(std::string mensagem, std::string emissor = "defaut"): mensagem_(mensagem), emissor_(emissor) {}
+  ExcecaoPadrao(std::string mensagem, std::string emissor = "default"): mensagem_(mensagem), emissor_(emissor) {}
 
   /**
    * @brief Retorna a mensagem da Excecao

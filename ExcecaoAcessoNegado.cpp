@@ -17,10 +17,13 @@ std::string ExcecaoAcessoNegado::getMensagem() const{
   return this->mensagem_;
 }
 void ExcecaoAcessoNegado::criaLogExcecaoAcessoNegado(Data data, std::string entidade, Cadastro* cadastro_){
-  LogAcessoNegado a(data, entidade, cadastro_, this->getMensagem());
-  //Log_List::addLog(a);
+  LogAcessoNegado* a = new LogAcessoNegado(data, entidade, cadastro_, this->getMensagem());
+  Log_List::addLog(a);
 }
 
+std::string ExcecaoAcessoNegado::resumo() const{
+  return "O usuário logado não tem permissão acessar: " + mensagem_;
+}
 
   
 

@@ -1,18 +1,9 @@
 #include "Pagamento.hpp"
 
-Pagamento::Pagamento(std::string tipo, int parcelamento, Data data, double valor){
+Pagamento::Pagamento(FormaDePagamento forma, int parcelamento, Data data, double valor): tipo_(forma){
   data_ = data;
   parcelamento_ = parcelamento;
   valor_ = valor;
-  try 
-  {
-    tipo_ = tipo;
-  }
-  catch(const std::exception& e)
-  {
-    std::cerr << e.what() << '\n';
-  }
-  
 }
 
 void Pagamento::setData(Data data) {

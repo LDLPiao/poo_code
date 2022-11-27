@@ -19,7 +19,7 @@ public:
   /**
    * @brief Imprime o Log.
    */
-   string printLog();
+  std::string printLog();
 };
 
 #endif

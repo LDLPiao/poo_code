@@ -7,15 +7,15 @@
 /**
  * @brief Singleton que garante que existe apenas uma lista de Log's
  * @author @Lucas-Emanuel
- * @example LogLeitura a("Parâmetros");
- *          Log_List::getInstance().addLog(&a);
+ * @example LogLeitura* a = new LogLeitura("Parâmetros");
+ *          Log_List::addLog(a);
  */
 class Log_List{
  private:
 
   /**
    * @brief Set de permissões que o usuário logado possui.
-   */std::list<Log> _lista;
+   */static std::list<Log*> _lista;
 
   /**
    * @brief Construtor da classe.
@@ -33,8 +33,27 @@ class Log_List{
       return _instance;
    }
 
+  ~Log_List()
+  {
+    for (std::list<Log*>::iterator it = _lista.begin(); it != _lista.end(); ++it)
+    {
+      delete (*it);
+    }
+  }
+
   /**
    * @brief Função que adiciona Log à Log_List.
-   */void addLog(const Log& log){_lista.push_back(log);}
+   */static void addLog(Log* log){_lista.push_back(log);}
+
+  /**
+   * @brief Função que adiciona Log à Log_List.
+   */static void printLogs()
+   {
+      for (std::list<Log*>::iterator it = _lista.begin(); it != _lista.end(); ++it)
+      {
+        (*it)->printLog();
+      }
+   }
+
 };
 #endif

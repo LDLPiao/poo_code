@@ -13,6 +13,15 @@
 #include "Fornecedor.hpp"
 #include "Cadastro.hpp"
 #include "ExcecaoPadrao.hpp"
+#include "ExcecaoAcessoNegado.hpp"
+#include "Usuario.hpp"
+#include "Veiculo.hpp"
+#include "OrdemProducao.hpp"
+
+#include "LogList.hpp"
+#include "LogAcessoNegado.hpp"
+#include "LogLeitura.hpp"
+#include "LogEscrita.hpp"
 
 #include <iostream>
 #include <list>
@@ -34,13 +43,16 @@ private:
   std::list<MateriaPrima> materiaprima_;
   std::list<Fornecedor> _fornecedores;
   std::list<Cadastro> _cadastros;
-  std::pair<float,float> coordenadas_;
+  std::list<OrdemProducao> _Ordens_de_producao_validadas;
+  std::list<OrdemProducao> _Ordens_de_producao_em_aberto;
+  //std::pair<float,float> coordenadas_;
+  Endereco _endereco;
  /**
    * @brief Construtor padrao que cria a empresa
    *
    * @param nome nome da empresa
    */
-  Empresa(std::pair<float,float> coordenadas);
+  Empresa();
 public:
  
   
@@ -67,13 +79,16 @@ public:
   std::list<Grupos>* getGrupos();
   std::list<MateriaPrima>* getMP();
   std::list<Fornecedor>* getFornecedores();
-  std::pair<float,float> getCoordenadas();
+  //std::pair<float,float> getCoordenadas();
+  Endereco getEndereco();
+  void setEndereco(Endereco e){_endereco = e;}
   /**
    * @brief Adiciona um funcionário pra lista de funcionarios
    *
    * @param funcionario Funcionário desejado
    */
   void addFuncionario(Funcionario funcionario);
+
 
   /**
    * @brief Remove um funcionário da lista de funcionarios, mas primeiro confere se o funcionário está na lista
@@ -89,12 +104,10 @@ public:
    */
   void Demitir(Funcionario funcionario);
 
-  /**
-   * @brief Remove um funcionário da lista de funcionarios do departamento, mas primeiro confere se o funcionário está na lista
-   *
-   * @param a ponteiro para o funcionário desejado
+  /*
+   * @brief admite um funcionario
    */
-  void admitirFuncionario(Funcionario* a, const double salario, Cargo &cargo);
+  void admitirFuncionario(Funcionario a, const double& salario, std::string cargo, std::string departamento);
 
   /**
    * @brief Cadastro de usuario.
@@ -146,8 +159,14 @@ public:
    * @param lista de grupos de permissão que o usuario possui acesso
    */void cadastrarGrupo(std::string nome, std::list<std::string> permissoes)
     {
-      this->_grupos_de_permissoes.push_back(Grupos(nome, permissoes));
+      if(!Usuario::getInstance().checkPermissao("Cadastrar-grupo")) {
+    ExcecaoAcessoNegado E ("cadastrarGrupo");
+    E.criaLogExcecaoAcessoNegado(Data::dateNow(), "Grupos", Usuario::getInstance().getCadastro());
+    throw  E;
     }
+  
+      this->_grupos_de_permissoes.push_back(Grupos(nome, permissoes));
+  }
 
   /**
    * @brief Cadastro de grupos de permissão.
@@ -164,7 +183,47 @@ public:
           }
       }
       throw ExcecaoPadrao("Grupo não encontrado","Empresa.procurarGrupo");
-    }
+    };
+
+    /**
+   * @brief Adiciona um cargo pra lista de cargos
+   *
+   * @param cargo Cargo a ser criado
+   */
+  void addCargo(std::string nome);
+  void addDepartamento(std::string nome);
+  void addOrdemProducao(OrdemProducao ordem);
+  void validaOrdemProducao(std::string nome_do_produto);
+  Cargo* getCargo(std::string nome);
+  Departamento* getDepartamento(std::string nome);
+  MateriaPrima* getMateriaPrima(std::string nome);
+
+  bool checkCargo(std::string cargo);
+
+  void addMateriaPrima(MateriaPrima materia_prima){
+    if(!Usuario::getInstance().checkPermissao("Cadastrar-materia-prima"))
+  {
+    ExcecaoAcessoNegado E ("addMateriaPrima");
+    E.criaLogExcecaoAcessoNegado(Data::dateNow(), "materiaprima_", Usuario::getInstance().getCadastro());
+    throw  E;
+  }
+    materiaprima_.push_back(materia_prima);
+    
+    LogEscrita *a = new LogEscrita(Data::dateNow(), "Empresa", Usuario::getInstance().getCadastro(), "materiasprimas_: +", materia_prima.getNome());
+  Log_List::addLog(a);
+  }
+
+  void addProduto(Produto produto);
+
+  void produzirProduto(int codigo, int qtd);
+
+  void addOrcamentoVenda(std::map<Produto*, int> carrinho, Cliente& cliente);
+
+  Produto* getProduto(std::string nome);
+
+  Cliente* getCliente(std::string certificado);
+
+  Funcionario* getFuncionario(std::string nome);
 };
 
 #endif

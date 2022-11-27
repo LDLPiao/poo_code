@@ -1,6 +1,6 @@
 #include "Pagamento.hpp"
 
-Pagamento::Pagamento(std::string tipo, int parcelamento, Data data, double valor): tipo_(tipo) {
+Pagamento::Pagamento(FormaDePagamento forma, int parcelamento, Data data, double valor)tipo_(forma){
   data_ = data;
   parcelamento_ = parcelamento;
   valor_ = valor;

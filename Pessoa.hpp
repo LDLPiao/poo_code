@@ -1,6 +1,7 @@
 #ifndef PESSOA_H
 #define PESSOA_H
 
+#include "ExcecaoPadrao.hpp"
 
 #include <iostream>
 #include <string>

@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string.h>
 #include "Log.hpp"
+#include <string>
 
 class LogLeitura: public Log {
  private:
@@ -26,6 +27,5 @@ class LogLeitura: public Log {
   void setAtributo(std::string atributo);
 
    std::string printLog();
-
 };
 #endif

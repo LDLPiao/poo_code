@@ -13,7 +13,8 @@ Pessoa::Pessoa(const std::string& nome,
 void Pessoa::setCpf(const std::string &certificado){
   std::string cpf = certificado;
   if (cpf.length() != 11){
-  std::cout << "CPF INVALIDO" << std::endl;
+  //std::cout << "CPF INVALIDO" << std::endl;
+    throw ExcecaoPadrao("CERTIFICADO INVALIDO", "CPF");
   return;
 }
   //Verifica primeiro digito, resto deve ser igual ao penultimo digito
@@ -57,7 +58,8 @@ void Pessoa::setCpf(const std::string &certificado){
   if(resto == d1 && resto2 == d2)
     this->_certificado = certificado;
   else
-    std::cout << "CPF INVALIDO" << std::endl;
+    //std::cout << "CPF INVALIDO" << std::endl;
+    throw ExcecaoPadrao("CERTIFICADO INVALIDO", "CPF");
     
     
 }
@@ -66,7 +68,8 @@ void Pessoa::setCNPJ(const std::string &certificado){
   std::string cnpj = certificado;
 
   if (cnpj.length() != 14){
-  std::cout << "CNPJ INVALIDO" << std::endl;
+  //std::cout << "CNPJ INVALIDO" << std::endl;
+    throw ExcecaoPadrao("CERTIFICADO INVALIDO ", "CPNJ");
   return;
     }
 //Verifica primeiro digito
@@ -105,7 +108,8 @@ else
   verificador1 = 11 - resto1;
 
 if(verificador1 != n[12]){
-  std::cout << "CNPJ INVALIDO" << std::endl;
+  //std::cout << "CNPJ INVALIDO" << std::endl;
+  throw ExcecaoPadrao("CERTIFICADO INVALIDO ", "CPNJ");
   return;
 }
 //Verifica o segundo digito
@@ -148,7 +152,8 @@ if(verificador2 == n[13]){
   this->_certificado = certificado;
   }
 else
-  std::cout << "CNPJ INVALIDO" << std::endl;
+  //std::cout << "CNPJ INVALIDO" << std::endl;
+  throw ExcecaoPadrao("CERTIFICADO INVALIDO ", "CPNJ");
   
   
 }

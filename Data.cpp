@@ -133,7 +133,7 @@ Data::Data(long valTicks) {
 Data::~Data() {}
 
 // Operadores:
-void Data::setData(Data &d2) {
+void Data::operator=(Data d2) {
   setAMD(d2);
   setHora(d2.getHora());
   setMin(d2.getMin());

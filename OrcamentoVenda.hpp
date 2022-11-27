@@ -10,7 +10,9 @@
 #include "Cliente.hpp" //ok
 #include "Orcamento.hpp" //ok
 #include <string>
+#include "FormaDePagamento.hpp"
 
+#define ESTOU_CIENTE true
 
 /**
  * @brief Classe responsavel pelo armazenamento da cotação de uma determinada quantidade de produtos para um cliente
@@ -22,6 +24,9 @@ class OrcamentoVenda: public Orcamento{
    * @brief Valor total do orçamento DE Venda
    */double _valor_total;
 
+  /**
+   * @brief forma de pagamento;
+   */FormaDePagamento _forma;
     
   /**
    * @brief Código do produto
@@ -31,7 +36,7 @@ class OrcamentoVenda: public Orcamento{
    * @brief Ponteiro para o Cliente
    */Cliente* _cliente;
 
-/**
+  /**
    * @brief Lista de pedidos
    */std::list<PedidoVenda> _lista_pedidos;
 
@@ -40,7 +45,7 @@ class OrcamentoVenda: public Orcamento{
   /**
    * @brief Construtor da classe.
    */
-  OrcamentoVenda(Data data, std::map<Produto*, int> carrinho, Cliente& cliente);
+  OrcamentoVenda(std::map<Produto*, int> carrinho, Cliente* cliente, std::string forma_de_pagamento);
 
   /**
    * @brief Retorna o valor contido em _valor_total.
@@ -48,7 +53,7 @@ class OrcamentoVenda: public Orcamento{
   
   /**
    * @brief Retorna o valor contido em _valor_total.
-   */void setValorTotal();
+   */double ValorTotal();
 
   /**
    * @brief Retorna o ponteiro de Cliente
@@ -65,6 +70,6 @@ class OrcamentoVenda: public Orcamento{
 
   /**
    * @brief Retorna o ponteiro de Cliente
-   */void Comprar();
+   */void Comprar(bool ciente = 0);
 };
 #endif

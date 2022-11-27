@@ -16,7 +16,7 @@ class Orcamento{
 
  public:
  
-  Orcamento(Data data);
+  Orcamento();
 
   /**
    * @brief Retorna o valor contido em _data.

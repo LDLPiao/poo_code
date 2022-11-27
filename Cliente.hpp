@@ -19,7 +19,7 @@ class Cliente: public Pessoa {
   /**
    * @brief Endereco de telefone do cliente
    */
-  int _telefone;
+  std::string _telefone;
  public:
 
   /**
@@ -29,7 +29,7 @@ class Cliente: public Pessoa {
   Cliente(std::string nome,
           std::string email,
           std::string certificado,
-          const int telefone,
+          std::string telefone,
           bool tipo = 0);
 
   Cliente();
@@ -49,13 +49,13 @@ class Cliente: public Pessoa {
   /**
    * @brief Atribui um valor à _telefone.
    */
-  void setTelefone(int telefone);
+  void setTelefone(std::string telefone);
 
   /**
    * @brief Retorna o valor contido em _telefone.
    * 
    */
-  int getTelefone();
+  std::string getTelefone();
 
 };
 #endif

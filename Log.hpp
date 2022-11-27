@@ -49,7 +49,7 @@ public:
   /**
    * @brief print do log
    */
-  //virtual std::string printLog() = 0;
+  virtual std::string printLog() = 0;
 };
 
 #endif

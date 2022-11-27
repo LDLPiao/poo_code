@@ -3,6 +3,7 @@
 
 #include "Grupos.hpp"
 #include "Cadastro.hpp"
+#include "ExcecaoPadrao.hpp"
 #include <iostream>
 #include <string>
 #include <set>
@@ -17,6 +18,8 @@ class Usuario{
   /**
    * @brief Set de permissões que o usuário logado possui.
    */std::set<std::string> _permissoes;
+  bool _logado = false;
+  Cadastro* _cadastro;
 
   /**
    * @brief Construtor da classe.
@@ -48,6 +51,8 @@ class Usuario{
   /**
    * @brief Função que limpa todas as permissões que  um usuário tem.
    */void limpaPermissao(){ this->_permissoes.clear();}
+
+    Cadastro* getCadastro(){return _cadastro;}
 
 };
 #endif

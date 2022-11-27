@@ -1,9 +1,8 @@
 
 #include "Orcamento.hpp"
 
-Orcamento::Orcamento(Data data){
-  this->_data = data;
-}
+Orcamento::Orcamento(): _data(Data::dateNow()){}
+
 void Orcamento::setData(Data data) {
     this->_data = data;
 }

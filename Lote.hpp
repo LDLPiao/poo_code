@@ -15,7 +15,7 @@ class Lote {
    * @brief Adiciona um novo pedido a lista de pedidos processados.
    * @param p Representa o novo pedido que foi recebido.
    */
-  Lote(const Data& data, const long int& numero, const long int& codigo, const int& quantidade);
+  Lote(const Data& data, const int& codigo, const int& quantidade);
   
 
   /**
@@ -39,8 +39,9 @@ class Lote {
    * @brief Atributos do lote: Data, numero, codigo, quantidade de produtos do lote
    */
   Data _data;
-  long int _numero;
-  long int _codigo;
+  int _numero;
+  int _codigo;
   int _quantidade;
+  static int _ultimo_codigo;
 };
 #endif

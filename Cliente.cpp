@@ -5,7 +5,7 @@
 Cliente::Cliente(std::string nome,
                  std::string email,
                  std::string certificado,
-                 const int telefone,
+                 std::string telefone,
                  bool tipo)
 : Pessoa(nome, email), _tipo(tipo), _telefone(telefone)
 {
@@ -17,6 +17,6 @@ void Cliente::setTipo(bool tipo){_tipo = tipo;}
 
 bool Cliente::getTipo(){return _tipo;}
 
-void Cliente::setTelefone(int telefone){_telefone = telefone;}
+void Cliente::setTelefone(std::string telefone){_telefone = telefone;}
 
-int Cliente::getTelefone(){return _telefone;}
+std::string Cliente::getTelefone(){return _telefone;}

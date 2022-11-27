@@ -1,7 +1,6 @@
 #ifndef DEPARTAMENTO_H
 #define DEPARTAMENTO_H
 
-#include "Funcionario.hpp"
 #include <iostream>
 #include <list>
 #include <string>
@@ -47,11 +46,6 @@ public:
    * @param a ponteiro para o funcionário desejado
    */
   void admitirFuncionario(Funcionario* a, const double salario, Cargo &cargo);
-
-  /**
-   * @brief Retorna o valor contido em _tipo.
-   */
-  bool getTipo();
 
   /**
    * @brief Retorna lista de funcionarios

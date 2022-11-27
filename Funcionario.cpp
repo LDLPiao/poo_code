@@ -1,23 +1,24 @@
 #include "Funcionario.hpp"
 
 #include <iostream>
+#include "LogEscrita.hpp"
+#include "LogList.hpp"
+#include "Usuario.hpp"
 
 Funcionario::Funcionario(const std::string nome, const std::string email,
                          const string cpf, const Data nascimento,
-                         const std::string endereco, const int matricula, const Cargo & cargo, std::pair<float,float> coordenadas, Data horario)
-    : Pessoa(nome, email) {
+                        Endereco endereco, const int matricula)
+    : Pessoa(nome, email), _endereco(endereco) {
   setCpf(cpf);
   setNascimento(nascimento);
-  setEndereco(endereco);
+  //setEndereco(endereco);
   setMatricula(matricula);
-  setCargo(*_cargo);
-  setCoordenadas(coordenadas);
-  setHorario(horario);
+  //setCoordenadas(coordenadas);
 }
 
 Data Funcionario::getNascimento() const { return _nascimento; }
 
-std::string Funcionario::getEndereco() const { return _endereco; }
+Endereco Funcionario::getEndereco() const { return _endereco; }
 
 int Funcionario::getMatricula() const { return _matricula; }
 
@@ -39,9 +40,9 @@ void Funcionario::setNascimento(Data nascimento) {
   _nascimento = nascimento;
 }
 
-void Funcionario::setEndereco(const std::string endereco) {
-  _endereco = endereco;
-}
+// void Funcionario::setEndereco(Endereco endereco) {
+//   _endereco = endereco;
+// }
 
 void Funcionario::setMatricula(const int matricula) { _matricula = matricula; }
 
@@ -56,14 +57,25 @@ void Funcionario::addSalario(const double salario) {
   _registro_salario.push_back(novo);
 }
 
-void Funcionario::Admitir(const double salario, Cargo &cargo,
-                          Departamento &departamento) {
+void Funcionario::Admitir(const double salario, Cargo &cargo, Departamento &departamento) {
+  //LogEscrita(Data data, std::string entidade, Cadastro* cadastro, std::string antes, std::string depois);
+  LogEscrita *a  = new LogEscrita(Data::dateNow(), "Funcionario", Usuario::getInstance().getCadastro(), "", cargo.getNomeCargo());
+  Log_List::addLog(a);
+  
+  LogEscrita *b = new LogEscrita(Data::dateNow(), "Funcionario", Usuario::getInstance().getCadastro(), "", departamento.getNomeDepartamento());
+  Log_List::addLog(b);
+  
   getAdmissoes().push_back({Data::dateNow(), salario});
   setCargo(cargo);
   setDepartamento(departamento);
 }
 
 void Funcionario::Demitir() {
+  LogEscrita *a  = new LogEscrita(Data::dateNow(), "Funcionario", Usuario::getInstance().getCadastro(), "", Data::dateNow().getData());
+  Log_List::addLog(a);
+  LogEscrita *b = new LogEscrita(Data::dateNow(), "Funcionario", Usuario::getInstance().getCadastro(), to_string(getDinheiroatual()), "0");
+  Log_List::addLog(b);
+  
   getDemissoes().push_back(Data::dateNow());
   addSalario(0);
   _cargo = nullptr;
@@ -82,9 +94,11 @@ void Funcionario::setHorario(Data horario){
   horario_.setMin(horario.getMin());
 }
 
-void Funcionario::setCoordenadas (std::pair<float,float> coordenadas){
-  coordenadas_.first = coordenadas.first;
-  coordenadas_.second = coordenadas.second;
-}
+// void Funcionario::setCoordenadas (std::pair<float,float> coordenadas){
+//   coordenadas_.first = coordenadas.first;
+//   coordenadas_.second = coordenadas.second;
+// }
 
-std::pair<float,float> Funcionario::getCoordenadas() const { return coordenadas_; }
+// std::pair<float,float> Funcionario::getCoordenadas() const { return coordenadas_; }
+
+Data Funcionario::getHorario() const { return horario_; }
